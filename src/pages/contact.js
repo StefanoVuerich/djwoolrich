@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
+import emailjs from "@emailjs/browser"
 import Layout from "../components/Layout"
 import Breadcrumb from "../components/Breadcrumb"
 import {
@@ -32,6 +33,15 @@ const ContactPage = () => {
   const [acceptTerms, setAcceptTerms] = useState(false)
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [submitError, setSubmitError] = useState("")
+
+  // Inizializza EmailJS
+  useEffect(() => {
+    if (process.env.GATSBY_EMAILJS_PUBLIC_KEY) {
+      emailjs.init(process.env.GATSBY_EMAILJS_PUBLIC_KEY)
+    }
+  }, [])
 
   const validateEmail = (email) => {
     // Regex email più robusta
@@ -97,7 +107,7 @@ const ContactPage = () => {
     return newErrors
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const newErrors = validateForm()
 
@@ -106,23 +116,46 @@ const ContactPage = () => {
       return
     }
 
-    setSubmitted(true)
-    // Qui aggiungerai l'integrazione con il servizio di email (Formspree, Netlify Forms, ecc.)
-    console.log("Form data:", formData)
+    setLoading(true)
+    setSubmitError("")
 
-    // Reset form dopo 2 secondi
-    setTimeout(() => {
-      setFormData({
-        nome: "",
-        email: "",
-        telefono: "",
-        servizio: "",
-        data: "",
-        messaggio: "",
-      })
-      setAcceptTerms(false)
-      setSubmitted(false)
-    }, 2000)
+    try {
+      await emailjs.send(
+        process.env.GATSBY_EMAILJS_SERVICE_ID || "",
+        process.env.GATSBY_EMAILJS_TEMPLATE_ID || "",
+        {
+          from_name: formData.nome,
+          from_email: formData.email,
+          telefono: formData.telefono || "Non fornito",
+          servizio: formData.servizio || "Non specificato",
+          data: formData.data || "Non specificata",
+          messaggio: formData.messaggio,
+          accept_terms: acceptTerms ? "Sì" : "No",
+          to_email: "info@djwoolrich.it",
+        }
+      )
+
+      setSubmitted(true)
+      setLoading(false)
+
+      // Reset form dopo 2 secondi
+      setTimeout(() => {
+        setFormData({
+          nome: "",
+          email: "",
+          telefono: "",
+          servizio: "",
+          data: "",
+          messaggio: "",
+        })
+        setAcceptTerms(false)
+        setSubmitted(false)
+      }, 2000)
+    } catch (error) {
+      setLoading(false)
+      setSubmitError("Errore nell'invio del messaggio. Riprova più tardi o contattami direttamente.")
+      console.error("EmailJS error:", error)
+    }
   }
 
   const isFormValid = formData.nome.trim() && formData.email.trim() && formData.messaggio.trim() && acceptTerms
@@ -720,12 +753,26 @@ const ContactPage = () => {
                   ✓ Messaggio inviato con successo! Ti risponderò entro 24 ore.
                 </Box>
               )}
+              {submitError && (
+                <Box
+                  sx={{
+                    backgroundColor: "#ffebee",
+                    color: "#c62828",
+                    p: 2,
+                    mb: 2,
+                    border: "1px solid #ef5350",
+                    fontSize: "0.875rem",
+                  }}
+                >
+                  ✗ {submitError}
+                </Box>
+              )}
               <Button
                 type="submit"
-                disabled={!isFormValid}
+                disabled={!isFormValid || loading}
                 disableElevation
                 sx={{
-                  backgroundColor: isFormValid ? "#1a1a1a" : "#ccc",
+                  backgroundColor: isFormValid && !loading ? "#1a1a1a" : "#ccc",
                   color: "#fff",
                   borderRadius: 0,
                   px: 5,
@@ -735,13 +782,13 @@ const ContactPage = () => {
                   letterSpacing: "0.08em",
                   textTransform: "uppercase",
                   "&:hover": {
-                    backgroundColor: isFormValid ? "#444" : "#ccc",
+                    backgroundColor: isFormValid && !loading ? "#444" : "#ccc",
                   },
                   transition: "background-color 0.3s ease",
-                  cursor: isFormValid ? "pointer" : "not-allowed",
+                  cursor: isFormValid && !loading ? "pointer" : "not-allowed",
                 }}
               >
-                {submitted ? "Messaggio inviato!" : "Invia messaggio"}
+                {loading ? "Invio in corso..." : submitted ? "Messaggio inviato!" : "Invia messaggio"}
               </Button>
             </Box>
           </Box>
