@@ -1,67 +1,66 @@
 // ============================================
-// STILI GLOBALI
-// ============================================
-
-// ============================================
 // VARIABILI
 // ============================================
 
-// Colori
-$color-primary: #2c3e50;
-$color-secondary: #FFA500;
-$color-dark: #1a1a1a;
-$color-light: #f9f9f9;
-$color-white: #ffffff;
-$color-text: #333333;
-$color-text-light: #666666;
-$color-border: #e0e0e0;
+// Colori - palette minimalista bianco/nero
+$color-white:       #ffffff;
+$color-black:       #000000;
+$color-text:        #1a1a1a;
+$color-text-light:  #666666;
+$color-border:      #e8e8e8;
+$color-bg-light:    #f5f5f5;
+$color-bg-dark:     #1a1a1a;
 
 // Spacing
-$spacing-xs: 4px;
-$spacing-sm: 8px;
-$spacing-md: 16px;
-$spacing-lg: 24px;
-$spacing-xl: 32px;
-$spacing-2xl: 48px;
+$spacing-xs:  8px;
+$spacing-sm:  16px;
+$spacing-md:  24px;
+$spacing-lg:  40px;
+$spacing-xl:  64px;
+$spacing-2xl: 96px;
 
-// Font sizes
-$font-size-xs: 0.75rem;
-$font-size-sm: 0.875rem;
-$font-size-base: 1rem;
-$font-size-lg: 1.125rem;
-$font-size-xl: 1.25rem;
-$font-size-2xl: 1.5rem;
-$font-size-3xl: 1.875rem;
-$font-size-4xl: 2.25rem;
+// Tipografia
+$font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
 
-// Font family
-$font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-$font-family-mono: "Courier New", monospace;
+$font-size-sm:  0.875rem;   // 14px
+$font-size-md:  1rem;       // 16px
+$font-size-lg:  1.125rem;   // 18px
+$font-size-xl:  1.5rem;     // 24px
+$font-size-2xl: 2rem;       // 32px
+$font-size-3xl: 2.75rem;    // 44px
+$font-size-4xl: 3.5rem;     // 56px
+
+$font-weight-regular: 400;
+$font-weight-medium:  500;
+$font-weight-bold:    700;
+
+$line-height-tight:   1.2;
+$line-height-normal:  1.6;
+$line-height-relaxed: 1.8;
 
 // Border radius
-$border-radius-sm: 4px;
-$border-radius-md: 8px;
-$border-radius-lg: 12px;
+$radius-none: 0;
+$radius-sm:   4px;
+$radius-md:   8px;
 
-// Shadows
-$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
-$shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.15);
+// Ombre
+$shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+$shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.14);
 
-// Transitions
-$transition-fast: 0.15s ease;
-$transition-base: 0.3s ease;
-$transition-slow: 0.5s ease;
+// Transizioni
+$transition: all 0.3s ease;
+$transition-fast: all 0.15s ease;
 
 // Breakpoints
-$breakpoint-xs: 320px;
-$breakpoint-sm: 640px;
-$breakpoint-md: 1024px;
-$breakpoint-lg: 1280px;
-$breakpoint-xl: 1536px;
+$bp-sm: 640px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
 
 // ============================================
-// RESET E STILI BASE
+// RESET
 // ============================================
 
 *,
@@ -73,133 +72,123 @@ $breakpoint-xl: 1536px;
 }
 
 html {
+  font-size: 16px;
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: $font-family-base;
-  font-size: $font-size-base;
-  line-height: 1.6;
+  font-family: $font-family;
+  font-size: $font-size-md;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-normal;
   color: $color-text;
   background-color: $color-white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin: 0;
 }
+
 
 // ============================================
 // TIPOGRAFIA
 // ============================================
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: $spacing-md;
-  color: $color-primary;
-}
-
-h1 {
-  font-size: $font-size-4xl;
-}
-
-h2 {
-  font-size: $font-size-3xl;
-}
-
-h3 {
-  font-size: $font-size-2xl;
-}
-
-h4 {
-  font-size: $font-size-xl;
-}
-
-h5 {
-  font-size: $font-size-lg;
-}
-
-h6 {
-  font-size: $font-size-base;
-}
-
-p {
-  margin-bottom: $spacing-md;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-a {
-  color: $color-secondary;
-  text-decoration: none;
-  transition: color $transition-base;
-
-  &:hover {
-    color: darken($color-secondary, 10%);
-  }
-}
-
-code {
-  font-family: $font-family-mono;
-  background-color: $color-light;
-  padding: $spacing-xs $spacing-sm;
-  border-radius: $border-radius-sm;
-  font-size: 0.9em;
-}
-
-pre {
-  background-color: $color-dark;
-  color: $color-white;
-  padding: $spacing-lg;
-  border-radius: $border-radius-md;
-  overflow-x: auto;
-  margin-bottom: $spacing-md;
-
-  code {
-    background-color: transparent;
-    color: inherit;
-    padding: 0;
-    font-size: inherit;
-  }
-}
-
-ul,
-ol {
-  margin-bottom: $spacing-md;
-  padding-left: $spacing-lg;
-}
-
-li {
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  color: $color-text;
   margin-bottom: $spacing-sm;
 }
 
-// ============================================
-// LISTE
-// ============================================
+h1 { font-size: $font-size-4xl; }
+h2 { font-size: $font-size-3xl; }
+h3 { font-size: $font-size-2xl; }
+h4 { font-size: $font-size-xl; }
+h5 { font-size: $font-size-lg; }
+h6 { font-size: $font-size-md; }
 
-ul {
-  list-style-type: disc;
+@media (max-width: $bp-md) {
+  h1 { font-size: $font-size-2xl; }
+  h2 { font-size: $font-size-xl; }
+  h3 { font-size: $font-size-lg; }
 }
 
-ol {
-  list-style-type: decimal;
+p {
+  line-height: $line-height-relaxed;
+  margin-bottom: $spacing-sm;
+  color: $color-text-light;
+
+  &:last-child { margin-bottom: 0; }
 }
 
-// ============================================
-// IMMAGINI
-// ============================================
+a {
+  color: $color-text;
+  text-decoration: none;
+  transition: $transition;
+
+  &:hover { opacity: 0.6; }
+}
+
+strong { font-weight: $font-weight-bold; }
+
+em { font-style: italic; }
 
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
+
+
+// ============================================
+// BOTTONI
+// ============================================
+
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  font-family: $font-family;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: $radius-none;
+  cursor: pointer;
+  transition: $transition;
+
+  &--primary {
+    background-color: $color-black;
+    color: $color-white;
+
+    &:hover {
+      background-color: $color-text-light;
+      color: $color-white;
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    color: $color-text;
+    border: 1px solid $color-text;
+
+    &:hover {
+      background-color: $color-text;
+      color: $color-white;
+    }
+  }
+
+  &--outline-white {
+    background-color: transparent;
+    color: $color-white;
+    border: 1px solid $color-white;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-text;
+    }
+  }
+}
+
 
 // ============================================
 // FORM
@@ -208,219 +197,194 @@ img {
 input,
 textarea,
 select {
-  font-family: $font-family-base;
-  font-size: $font-size-base;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="number"],
-textarea,
-select {
+  font-family: $font-family;
+  font-size: $font-size-md;
   width: 100%;
-  padding: $spacing-sm $spacing-md;
+  padding: $spacing-xs $spacing-sm;
   border: 1px solid $color-border;
-  border-radius: $border-radius-sm;
-  font-size: $font-size-base;
-  transition: border-color $transition-base, box-shadow $transition-base;
+  border-radius: $radius-none;
+  background-color: $color-white;
+  color: $color-text;
+  transition: $transition;
+  appearance: none;
 
   &:focus {
     outline: none;
-    border-color: $color-secondary;
-    box-shadow: 0 0 0 3px rgba($color-secondary, 0.1);
+    border-color: $color-text;
+  }
+
+  &::placeholder {
+    color: lighten($color-text-light, 20%);
   }
 }
 
 textarea {
   resize: vertical;
-  min-height: 100px;
+  min-height: 120px;
 }
+
 
 // ============================================
-// TABELLE
+// SEZIONI
 // ============================================
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: $spacing-lg;
-}
+.section {
+  padding: $spacing-2xl 0;
 
-th,
-td {
-  padding: $spacing-md;
-  text-align: left;
-  border-bottom: 1px solid $color-border;
-}
+  @media (max-width: $bp-md) {
+    padding: $spacing-xl 0;
+  }
 
-th {
-  background-color: $color-light;
-  font-weight: 700;
-  color: $color-primary;
-}
+  &--bg-light {
+    background-color: $color-bg-light;
+  }
 
-// ============================================
-// UTILITÀ
-// ============================================
+  &--bg-dark {
+    background-color: $color-bg-dark;
+    color: $color-white;
 
-.text-center {
-  text-align: center;
-}
-
-.text-right {
-  text-align: right;
-}
-
-.text-left {
-  text-align: left;
-}
-
-.text-muted {
-  color: $color-text-light;
-}
-
-.text-primary {
-  color: $color-primary;
-}
-
-.text-secondary {
-  color: $color-secondary;
-}
-
-.mt-0 {
-  margin-top: 0;
-}
-
-.mb-0 {
-  margin-bottom: 0;
-}
-
-.mt-1 {
-  margin-top: $spacing-sm;
-}
-
-.mb-1 {
-  margin-bottom: $spacing-sm;
-}
-
-.mt-2 {
-  margin-top: $spacing-md;
-}
-
-.mb-2 {
-  margin-bottom: $spacing-md;
-}
-
-.mt-3 {
-  margin-top: $spacing-lg;
-}
-
-.mb-3 {
-  margin-bottom: $spacing-lg;
-}
-
-.mt-4 {
-  margin-top: $spacing-xl;
-}
-
-.mb-4 {
-  margin-bottom: $spacing-xl;
-}
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 $spacing-md;
-
-  @media (max-width: $breakpoint-sm) {
-    padding: 0 $spacing-sm;
+    h1, h2, h3, h4, p { color: $color-white; }
   }
 }
 
+.section-title {
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-sm;
+
+  @media (max-width: $bp-md) {
+    font-size: $font-size-xl;
+  }
+}
+
+.section-subtitle {
+  font-size: $font-size-lg;
+  color: $color-text-light;
+  margin-bottom: $spacing-lg;
+}
+
+
 // ============================================
-// SCROLLBAR PERSONALIZZATA
+// DIVISORE
+// ============================================
+
+hr {
+  border: none;
+  border-top: 1px solid $color-border;
+  margin: $spacing-lg 0;
+}
+
+.divider {
+  width: 40px;
+  height: 2px;
+  background-color: $color-text;
+  margin: $spacing-sm 0 $spacing-md;
+
+  &--center { margin-left: auto; margin-right: auto; }
+  &--white  { background-color: $color-white; }
+}
+
+
+// ============================================
+// CARD
+// ============================================
+
+.card {
+  background-color: $color-white;
+  border: 1px solid $color-border;
+  border-radius: $radius-none;
+  overflow: hidden;
+  transition: $transition;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-4px);
+  }
+
+  &__body { padding: $spacing-md; }
+
+  &__title {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    color: $color-text;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__text {
+    font-size: $font-size-sm;
+    color: $color-text-light;
+    line-height: $line-height-relaxed;
+  }
+}
+
+
+// ============================================
+// SCROLLBAR
 // ============================================
 
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: $color-light;
+  background: $color-bg-light;
 }
 
 ::-webkit-scrollbar-thumb {
   background: $color-border;
-  border-radius: $border-radius-sm;
 
   &:hover {
-    background: darken($color-border, 20%);
+    background: $color-text-light;
   }
 }
 
+
 // ============================================
-// SELEZIONE TESTO
+// SELEZIONE
 // ============================================
 
 ::selection {
-  background-color: $color-secondary;
+  background-color: $color-text;
   color: $color-white;
 }
 
-::-moz-selection {
-  background-color: $color-secondary;
-  color: $color-white;
-}
 
 // ============================================
-// FOCUS VISIBLE
+// FOCUS
 // ============================================
 
 :focus-visible {
-  outline: 2px solid $color-secondary;
+  outline: 2px solid $color-text;
   outline-offset: 2px;
 }
 
+
 // ============================================
-// PRINT STYLES
+// UTILITY
+// ============================================
+
+.text-center  { text-align: center; }
+.text-right   { text-align: right; }
+.text-muted   { color: $color-text-light; }
+.text-upper   { text-transform: uppercase; letter-spacing: 0.1em; }
+
+.mt-1 { margin-top: $spacing-xs; }
+.mt-2 { margin-top: $spacing-sm; }
+.mt-3 { margin-top: $spacing-md; }
+.mt-4 { margin-top: $spacing-lg; }
+
+.mb-1 { margin-bottom: $spacing-xs; }
+.mb-2 { margin-bottom: $spacing-sm; }
+.mb-3 { margin-bottom: $spacing-md; }
+.mb-4 { margin-bottom: $spacing-lg; }
+
+
+// ============================================
+// PRINT
 // ============================================
 
 @media print {
-  * {
-    background: transparent !important;
-    color: $color-dark !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
-
-  img {
-    max-width: 100% !important;
-  }
-
-  @page {
-    margin: 0.5cm;
-  }
-
-  h1,
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
-
-  p {
-    orphans: 3;
-    widows: 3;
-  }
+  body { font-size: 12pt; color: $color-black; }
+  a::after { content: " (" attr(href) ")"; }
+  h1, h2, h3 { page-break-after: avoid; }
 }

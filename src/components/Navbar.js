@@ -1,32 +1,39 @@
 import React, { useState } from "react"
-import { AppBar, Toolbar, Typography, Button, Menu, MenuItem, Container, Box } from "@mui/material"
+import { AppBar, Toolbar, Typography, Button, Menu, MenuItem, Container, Box, Divider } from "@mui/material"
 import MenuIcon from "@mui/icons-material/Menu"
+import CloseIcon from "@mui/icons-material/Close"
 import IconButton from "@mui/material/IconButton"
 import { Link as GatsbyLink } from "gatsby"
 
+const menuItems = [
+  { label: "Chi Siamo", to: "/about" },
+  { label: "Servizi", to: "/services" },
+  { label: "Blog", to: "/blog" },
+  { label: "Contatti", to: "/contact" },
+]
+
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState(null)
+  const open = Boolean(anchorEl)
 
-  const handleMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget)
-  }
-
-  const handleMenuClose = () => {
-    setAnchorEl(null)
-  }
-
-  const menuItems = [
-    { label: "Home", to: "/" },
-    { label: "Chi Siamo", to: "/about" },
-    { label: "Servizi", to: "/services" },
-    { label: "Contatti", to: "/contact" },
-  ]
+  const handleMenuOpen = (event) => setAnchorEl(event.currentTarget)
+  const handleMenuClose = () => setAnchorEl(null)
 
   return (
-    <AppBar position="static" sx={{ mb: 4 }}>
+    <AppBar
+      position="sticky"
+      elevation={0}
+      sx={{
+        backgroundColor: "#ffffff",
+        borderBottom: "1px solid #e8e8e8",
+        top: 0,
+        zIndex: 1100,
+      }}
+    >
       <Container maxWidth="lg">
-        <Toolbar disableGutters>
-          {/* Logo/Titolo */}
+        <Toolbar disableGutters sx={{ minHeight: { xs: 64, md: 72 } }}>
+
+          {/* Logo */}
           <Typography
             variant="h6"
             component={GatsbyLink}
@@ -34,63 +41,98 @@ const Navbar = () => {
             sx={{
               flexGrow: 1,
               fontWeight: 700,
-              color: "white",
+              fontSize: "1.1rem",
+              letterSpacing: "0.05em",
+              textTransform: "uppercase",
+              color: "#1a1a1a",
               textDecoration: "none",
-              "&:hover": {
-                opacity: 0.8,
-              },
+              "&:hover": { opacity: 0.6 },
+              transition: "opacity 0.3s ease",
             }}
           >
             DJ Woolrich
           </Typography>
 
           {/* Menu desktop */}
-          <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
+          <Box sx={{ display: { xs: "none", md: "flex" }, gap: 0.5 }}>
             {menuItems.map((item) => (
               <Button
                 key={item.to}
                 component={GatsbyLink}
                 to={item.to}
+                disableRipple
                 sx={{
-                  color: "white",
+                  color: "#1a1a1a",
                   textTransform: "none",
-                  fontSize: "1rem",
+                  fontSize: "0.875rem",
+                  fontWeight: 400,
+                  letterSpacing: "0.02em",
+                  px: 2,
+                  borderRadius: 0,
                   "&:hover": {
-                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                    backgroundColor: "transparent",
+                    opacity: 0.5,
                   },
+                  transition: "opacity 0.3s ease",
                 }}
               >
                 {item.label}
               </Button>
             ))}
+            <Button
+              component={GatsbyLink}
+              to="/contact"
+              disableRipple
+              sx={{
+                ml: 2,
+                px: 3,
+                py: 1,
+                backgroundColor: "#1a1a1a",
+                color: "#ffffff",
+                textTransform: "none",
+                fontSize: "0.8rem",
+                fontWeight: 500,
+                borderRadius: 0,
+                "&:hover": {
+                  backgroundColor: "#444",
+                },
+                transition: "background-color 0.3s ease",
+              }}
+            >
+              Verifica disponibilità
+            </Button>
           </Box>
 
-          {/* Menu mobile */}
+          {/* Hamburger mobile */}
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
-              size="large"
-              aria-label="menu"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
               onClick={handleMenuOpen}
-              color="inherit"
+              disableRipple
+              sx={{ color: "#1a1a1a", p: 1 }}
+              aria-label="apri menu"
             >
-              <MenuIcon />
+              {open ? <CloseIcon /> : <MenuIcon />}
             </IconButton>
             <Menu
-              id="menu-appbar"
               anchorEl={anchorEl}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorEl)}
+              open={open}
               onClose={handleMenuClose}
+              elevation={0}
+              PaperProps={{
+                sx: {
+                  width: "100vw",
+                  maxWidth: "100%",
+                  left: "0 !important",
+                  right: 0,
+                  borderRadius: 0,
+                  border: "none",
+                  borderTop: "1px solid #e8e8e8",
+                  boxShadow: "0 8px 16px rgba(0,0,0,0.06)",
+                  py: 1,
+                },
+              }}
+              transformOrigin={{ horizontal: "right", vertical: "top" }}
+              anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
             >
               {menuItems.map((item) => (
                 <MenuItem
@@ -98,12 +140,36 @@ const Navbar = () => {
                   component={GatsbyLink}
                   to={item.to}
                   onClick={handleMenuClose}
+                  sx={{
+                    fontSize: "1rem",
+                    py: 1.5,
+                    px: 3,
+                    color: "#1a1a1a",
+                    "&:hover": { backgroundColor: "#f5f5f5" },
+                  }}
                 >
                   {item.label}
                 </MenuItem>
               ))}
+              <Divider sx={{ my: 1 }} />
+              <MenuItem
+                component={GatsbyLink}
+                to="/contact"
+                onClick={handleMenuClose}
+                sx={{
+                  fontSize: "0.875rem",
+                  fontWeight: 500,
+                  py: 1.5,
+                  px: 3,
+                  color: "#1a1a1a",
+                  "&:hover": { backgroundColor: "#f5f5f5" },
+                }}
+              >
+                Verifica disponibilità
+              </MenuItem>
             </Menu>
           </Box>
+
         </Toolbar>
       </Container>
     </AppBar>

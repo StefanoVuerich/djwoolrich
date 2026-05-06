@@ -2,8 +2,27 @@ import React from "react"
 import { Box, Container, Typography, Grid, Link } from "@mui/material"
 import FacebookIcon from "@mui/icons-material/Facebook"
 import InstagramIcon from "@mui/icons-material/Instagram"
-import TwitterIcon from "@mui/icons-material/Twitter"
+import YouTubeIcon from "@mui/icons-material/YouTube"
 import IconButton from "@mui/material/IconButton"
+
+const navLinks = [
+  { label: "Chi Siamo", href: "/about" },
+  { label: "DJ Matrimonio", href: "/services" },
+  { label: "Canzoni Su Misura", href: "/custom-songs" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contatti", href: "/contact" },
+]
+
+const legalLinks = [
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Cookie Policy", href: "/cookie" },
+]
+
+const socialLinks = [
+  { icon: <InstagramIcon fontSize="small" />, href: "https://instagram.com", label: "Instagram" },
+  { icon: <FacebookIcon fontSize="small" />, href: "https://facebook.com", label: "Facebook" },
+  { icon: <YouTubeIcon fontSize="small" />, href: "https://youtube.com", label: "YouTube" },
+]
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -12,139 +31,178 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
-        backgroundColor: "#2c3e50",
-        color: "white",
-        py: 6,
+        backgroundColor: "#f5f5f5",
+        borderTop: "1px solid #e8e8e8",
+        pt: 8,
+        pb: 4,
         mt: "auto",
       }}
     >
       <Container maxWidth="lg">
-        <Grid container spacing={4} sx={{ mb: 4 }}>
-          {/* Colonna 1: Chi Siamo */}
+        <Grid container spacing={6} sx={{ mb: 6 }}>
+
+          {/* Logo e descrizione */}
           <Grid item xs={12} md={4}>
-            <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
+            <Typography
+              variant="h6"
+              sx={{
+                fontWeight: 700,
+                fontSize: "1rem",
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                color: "#1a1a1a",
+                mb: 2,
+              }}
+            >
               DJ Woolrich
             </Typography>
-            <Typography variant="body2" sx={{ color: "rgba(255, 255, 255, 0.7)", lineHeight: 1.8 }}>
-              Musica dal vivo per i tuoi eventi speciali. Con esperienza nel settore,
-              offriamo intrattenimento musicale professionale di qualità.
+            <Typography
+              variant="body2"
+              sx={{ color: "#666", lineHeight: 1.8, mb: 3, maxWidth: 280 }}
+            >
+              Musica per i tuoi momenti speciali. Matrimoni, eventi e canzoni
+              su misura con professionalità e passione.
             </Typography>
-          </Grid>
 
-          {/* Colonna 2: Link Veloci */}
-          <Grid item xs={12} md={4}>
-            <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
-              Link Veloci
-            </Typography>
-            <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-              <Link
-                href="/"
-                sx={{
-                  color: "rgba(255, 255, 255, 0.7)",
-                  textDecoration: "none",
-                  "&:hover": {
-                    color: "white",
-                  },
-                }}
-              >
-                Home
-              </Link>
-              <Link
-                href="/about"
-                sx={{
-                  color: "rgba(255, 255, 255, 0.7)",
-                  textDecoration: "none",
-                  "&:hover": {
-                    color: "white",
-                  },
-                }}
-              >
-                Chi Siamo
-              </Link>
-              <Link
-                href="/services"
-                sx={{
-                  color: "rgba(255, 255, 255, 0.7)",
-                  textDecoration: "none",
-                  "&:hover": {
-                    color: "white",
-                  },
-                }}
-              >
-                Servizi
-              </Link>
-              <Link
-                href="/contact"
-                sx={{
-                  color: "rgba(255, 255, 255, 0.7)",
-                  textDecoration: "none",
-                  "&:hover": {
-                    color: "white",
-                  },
-                }}
-              >
-                Contatti
-              </Link>
+            {/* Icone social */}
+            <Box sx={{ display: "flex", gap: 0.5, ml: -1 }}>
+              {socialLinks.map((s) => (
+                <IconButton
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  disableRipple
+                  sx={{
+                    color: "#666",
+                    p: 1,
+                    borderRadius: 0,
+                    "&:hover": { color: "#1a1a1a", backgroundColor: "transparent" },
+                    transition: "color 0.3s ease",
+                  }}
+                >
+                  {s.icon}
+                </IconButton>
+              ))}
             </Box>
           </Grid>
 
-          {/* Colonna 3: Social Media */}
-          <Grid item xs={12} md={4}>
-            <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
-              Seguici
+          {/* Link di navigazione */}
+          <Grid item xs={6} md={3}>
+            <Typography
+              variant="overline"
+              sx={{
+                fontWeight: 600,
+                fontSize: "0.7rem",
+                letterSpacing: "0.12em",
+                color: "#1a1a1a",
+                display: "block",
+                mb: 2,
+              }}
+            >
+              Navigazione
             </Typography>
-            <Box sx={{ display: "flex", gap: 1 }}>
-              <IconButton
-                color="inherit"
-                href="https://facebook.com"
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 1.2 }}>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  sx={{
+                    fontSize: "0.875rem",
+                    color: "#666",
+                    textDecoration: "none",
+                    "&:hover": { color: "#1a1a1a" },
+                    transition: "color 0.3s ease",
+                  }}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </Box>
+          </Grid>
+
+          {/* Contatti */}
+          <Grid item xs={6} md={5}>
+            <Typography
+              variant="overline"
+              sx={{
+                fontWeight: 600,
+                fontSize: "0.7rem",
+                letterSpacing: "0.12em",
+                color: "#1a1a1a",
+                display: "block",
+                mb: 2,
+              }}
+            >
+              Contatti
+            </Typography>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 1.2 }}>
+              <Typography variant="body2" sx={{ color: "#666", fontSize: "0.875rem" }}>
+                Disponibile su appuntamento
+              </Typography>
+              <Link
+                href="mailto:info@djwoolrich.it"
+                sx={{
+                  fontSize: "0.875rem",
+                  color: "#666",
+                  textDecoration: "none",
+                  "&:hover": { color: "#1a1a1a" },
+                  transition: "color 0.3s ease",
+                }}
+              >
+                info@djwoolrich.it
+              </Link>
+              <Link
+                href="https://wa.me/1234567890"
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{
-                  color: "rgba(255, 255, 255, 0.7)",
-                  "&:hover": {
-                    color: "white",
-                  },
+                  fontSize: "0.875rem",
+                  color: "#666",
+                  textDecoration: "none",
+                  "&:hover": { color: "#1a1a1a" },
+                  transition: "color 0.3s ease",
                 }}
               >
-                <FacebookIcon />
-              </IconButton>
-              <IconButton
-                color="inherit"
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  color: "rgba(255, 255, 255, 0.7)",
-                  "&:hover": {
-                    color: "white",
-                  },
-                }}
-              >
-                <InstagramIcon />
-              </IconButton>
-              <IconButton
-                color="inherit"
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  color: "rgba(255, 255, 255, 0.7)",
-                  "&:hover": {
-                    color: "white",
-                  },
-                }}
-              >
-                <TwitterIcon />
-              </IconButton>
+                WhatsApp
+              </Link>
             </Box>
           </Grid>
         </Grid>
 
-        {/* Divisore */}
-        <Box sx={{ borderTop: "1px solid rgba(255, 255, 255, 0.1)", py: 3 }}>
-          <Typography variant="body2" sx={{ color: "rgba(255, 255, 255, 0.6)", textAlign: "center" }}>
+        {/* Riga inferiore */}
+        <Box
+          sx={{
+            borderTop: "1px solid #e8e8e8",
+            pt: 3,
+            display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
+            justifyContent: "space-between",
+            alignItems: { xs: "flex-start", sm: "center" },
+            gap: 1,
+          }}
+        >
+          <Typography variant="body2" sx={{ color: "#999", fontSize: "0.8rem" }}>
             &copy; {currentYear} DJ Woolrich. Tutti i diritti riservati.
           </Typography>
+          <Box sx={{ display: "flex", gap: 3 }}>
+            {legalLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                sx={{
+                  fontSize: "0.8rem",
+                  color: "#999",
+                  textDecoration: "none",
+                  "&:hover": { color: "#1a1a1a" },
+                  transition: "color 0.3s ease",
+                }}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </Box>
         </Box>
       </Container>
     </Box>
