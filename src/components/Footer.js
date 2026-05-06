@@ -42,7 +42,7 @@ const Footer = () => {
         <Grid container spacing={6} sx={{ mb: 6 }}>
 
           {/* Logo e descrizione */}
-          <Grid item xs={12} md={4}>
+          <Grid item size={{ xs: 12, md: 4 }}>
             <Typography
               variant="h6"
               sx={{
@@ -89,7 +89,7 @@ const Footer = () => {
           </Grid>
 
           {/* Link di navigazione */}
-          <Grid item xs={6} md={3}>
+          <Grid item size={{ xs: 6, md: 3 }}>
             <Typography
               variant="overline"
               sx={{
@@ -123,7 +123,7 @@ const Footer = () => {
           </Grid>
 
           {/* Contatti */}
-          <Grid item xs={6} md={5}>
+          <Grid item size={{ xs: 6, md: 5 }}>
             <Typography
               variant="overline"
               sx={{

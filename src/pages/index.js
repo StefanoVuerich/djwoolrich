@@ -60,7 +60,7 @@ const IndexPage = () => (
     >
       <Container maxWidth="lg">
         <Grid container spacing={6} alignItems="center">
-          <Grid item xs={12} md={6}>
+          <Grid item size={{ xs: 12, md: 6 }}>
             <Typography
               variant="overline"
               sx={{
@@ -146,7 +146,7 @@ const IndexPage = () => (
           </Grid>
 
           {/* Placeholder foto hero */}
-          <Grid item xs={12} md={6}>
+          <Grid item size={{ xs: 12, md: 6 }}>
             <Box
               sx={{
                 width: "100%",
@@ -226,7 +226,7 @@ const IndexPage = () => (
 
         <Grid container spacing={4}>
           {servizi.map((s) => (
-            <Grid item xs={12} md={6} key={s.titolo}>
+            <Grid item size={{ xs: 12, md: 6 }} key={s.titolo}>
               <Box
                 sx={{
                   backgroundColor: "#fff",
@@ -319,7 +319,7 @@ const IndexPage = () => (
       <Container maxWidth="lg">
         <Grid container spacing={6} alignItems="center">
           {/* Placeholder immagine */}
-          <Grid item xs={12} md={5}>
+          <Grid item size={{ xs: 12, md: 5 }}>
             <Box
               sx={{
                 width: "100%",
@@ -337,7 +337,7 @@ const IndexPage = () => (
             </Box>
           </Grid>
 
-          <Grid item xs={12} md={7}>
+          <Grid item size={{ xs: 12, md: 7 }}>
             <Typography
               variant="overline"
               sx={{
