@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/Layout"
+import Breadcrumb from "../components/Breadcrumb"
 import {
   Box,
   Container,
@@ -11,6 +12,14 @@ import {
 
 const IndexPage = () => (
   <Layout>
+
+    {/* ── BREADCRUMB ────────────────────────────────── */}
+    <Breadcrumb
+      items={[
+        { label: "Home", link: "/" },
+        { label: "Chi Siamo", active: true },
+      ]}
+    />
 
     {/* ── HERO ──────────────────────────────────────── */}
     <Box

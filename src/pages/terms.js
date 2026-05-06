@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/Layout"
+import Breadcrumb from "../components/Breadcrumb"
 import {
   Box,
   Container,
@@ -8,6 +9,14 @@ import {
 
 const TermsPage = () => (
   <Layout>
+
+    {/* ── BREADCRUMB ────────────────────────────────── */}
+    <Breadcrumb
+      items={[
+        { label: "Home", link: "/" },
+        { label: "Termini e Condizioni", active: true },
+      ]}
+    />
 
     {/* ── HERO ──────────────────────────────────────── */}
     <Box

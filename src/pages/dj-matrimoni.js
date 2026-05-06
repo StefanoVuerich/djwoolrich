@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/Layout"
+import Breadcrumb from "../components/Breadcrumb"
 import {
   Box,
   Container,
@@ -79,6 +80,14 @@ const processoLavoro = [
 
 const DjMatrimoniPage = () => (
   <Layout>
+
+    {/* ── BREADCRUMB ────────────────────────────────── */}
+    <Breadcrumb
+      items={[
+        { label: "Home", link: "/" },
+        { label: "DJ Matrimoni", active: true },
+      ]}
+    />
 
     {/* ── HERO ──────────────────────────────────────── */}
     <Box

@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import Layout from "../components/Layout"
+import Breadcrumb from "../components/Breadcrumb"
 import {
   Box,
   Container,
@@ -128,6 +129,14 @@ const ContactPage = () => {
 
   return (
     <Layout>
+
+      {/* ── BREADCRUMB ────────────────────────────────── */}
+      <Breadcrumb
+        items={[
+          { label: "Home", link: "/" },
+          { label: "Contatti", active: true },
+        ]}
+      />
 
       {/* ── HERO ──────────────────────────────────────── */}
       <Box
