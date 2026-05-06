@@ -1,4 +1,6 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import {
   Box,
@@ -45,8 +47,27 @@ const citazione = {
   autore: "DJ Woolrich",
 }
 
-const IndexPage = () => (
-  <Layout>
+const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      heroImage: file(name: { eq: "hero" }) {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
+      profileImage: file(name: { eq: "profile" }) {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
+    }
+  `)
+
+  const heroImg = getImage(data.heroImage)
+  const profileImg = getImage(data.profileImage)
+
+  return (
+    <Layout>
 
     {/* ── HERO ──────────────────────────────────────── */}
     <Box
@@ -54,19 +75,51 @@ const IndexPage = () => (
         minHeight: { xs: "60vh", md: "80vh" },
         display: "flex",
         alignItems: "center",
-        backgroundColor: "#f5f5f5",
         py: { xs: 10, md: 0 },
+        position: "relative",
+        overflow: "hidden",
+        width: "100%",
       }}
     >
+      {heroImg && (
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            zIndex: 0,
+            "& .gatsby-image-wrapper": {
+              width: "100%",
+              height: "100%",
+            },
+          }}
+        >
+          <GatsbyImage image={heroImg} alt="DJ Hero Background" />
+        </Box>
+      )}
+      <Box
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
+          zIndex: 1,
+        }}
+      />
+      <Box sx={{ position: "relative", zIndex: 2, width: "100%" }}>
       <Container maxWidth="lg">
-        <Grid container spacing={6} alignItems="center">
-          <Grid item size={{ xs: 12, md: 6 }}>
+        <Grid container alignItems="center">
+          <Grid item size={{ xs: 12, md: 8 }}>
             <Typography
               variant="overline"
               sx={{
                 fontSize: "0.75rem",
                 letterSpacing: "0.14em",
-                color: "#666",
+                color: "rgba(255, 255, 255, 0.7)",
                 display: "block",
                 mb: 2,
               }}
@@ -79,7 +132,7 @@ const IndexPage = () => (
                 fontSize: { xs: "2.5rem", md: "3.5rem" },
                 fontWeight: 700,
                 lineHeight: 1.1,
-                color: "#1a1a1a",
+                color: "#fff",
                 mb: 3,
               }}
             >
@@ -93,7 +146,7 @@ const IndexPage = () => (
               variant="body1"
               sx={{
                 fontSize: "1.05rem",
-                color: "#666",
+                color: "rgba(255, 255, 255, 0.85)",
                 lineHeight: 1.8,
                 mb: 4,
                 maxWidth: 420,
@@ -127,7 +180,7 @@ const IndexPage = () => (
                 disableElevation
                 sx={{
                   backgroundColor: "transparent",
-                  color: "#1a1a1a",
+                  color: "#fff",
                   borderRadius: 0,
                   px: 4,
                   py: 1.5,
@@ -135,8 +188,8 @@ const IndexPage = () => (
                   fontWeight: 500,
                   letterSpacing: "0.06em",
                   textTransform: "uppercase",
-                  border: "1px solid #1a1a1a",
-                  "&:hover": { backgroundColor: "#f5f5f5" },
+                  border: "1px solid #fff",
+                  "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.1)" },
                   transition: "background-color 0.3s ease",
                 }}
               >
@@ -144,26 +197,9 @@ const IndexPage = () => (
               </Button>
             </Box>
           </Grid>
-
-          {/* Placeholder foto hero */}
-          <Grid item size={{ xs: 12, md: 6 }}>
-            <Box
-              sx={{
-                width: "100%",
-                aspectRatio: "4/5",
-                backgroundColor: "#e0e0e0",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Typography sx={{ color: "#aaa", fontSize: "0.875rem" }}>
-                Foto DJ
-              </Typography>
-            </Box>
-          </Grid>
         </Grid>
       </Container>
+      </Box>
     </Box>
 
     {/* ── CITAZIONE ─────────────────────────────────── */}
@@ -318,23 +354,18 @@ const IndexPage = () => (
     <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: "#fff" }}>
       <Container maxWidth="lg">
         <Grid container spacing={6} alignItems="center">
-          {/* Placeholder immagine */}
+          {/* Foto profilo DJ */}
           <Grid item size={{ xs: 12, md: 5 }}>
-            <Box
-              sx={{
-                width: "100%",
-                aspectRatio: "1/1",
-                backgroundColor: "#f5f5f5",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                border: "1px solid #e8e8e8",
-              }}
-            >
-              <Typography sx={{ color: "#aaa", fontSize: "0.875rem" }}>
-                Foto profilo
-              </Typography>
-            </Box>
+            {profileImg && (
+              <Box
+                sx={{
+                  border: "1px solid #e8e8e8",
+                  overflow: "hidden",
+                }}
+              >
+                <GatsbyImage image={profileImg} alt="DJ Woolrich" />
+              </Box>
+            )}
           </Grid>
 
           <Grid item size={{ xs: 12, md: 7 }}>
@@ -452,7 +483,8 @@ const IndexPage = () => (
     </Box>
 
   </Layout>
-)
+    )
+}
 
 export default IndexPage
 

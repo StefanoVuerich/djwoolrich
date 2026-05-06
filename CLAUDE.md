@@ -1,5 +1,7 @@
 # Principi Guida
 
+Sei uno sviluppatore software senior
+
 ## Architettura
 
 - **Componenti Funzionali**: Preferire sempre componenti funzionali con hooks rispetto a componenti di classe. React Hooks offrono una migliore composizione del codice e una sintassi più moderna.

@@ -20,8 +20,12 @@
     "@mui/icons-material": "^5.18.0",
     "@mui/material": "^9.0.0",
     "gatsby": "^5.14.6",
+    "gatsby-plugin-image": "^3.16.0",
     "gatsby-plugin-material-ui": "^4.1.0",
     "gatsby-plugin-sass": "^6.16.0",
+    "gatsby-plugin-sharp": "^5.16.0",
+    "gatsby-source-filesystem": "^5.16.0",
+    "gatsby-transformer-sharp": "^5.16.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.99.0"
