@@ -8,6 +8,7 @@ import { Link as GatsbyLink } from "gatsby"
 const menuItems = [
   { label: "Home", to: "/" },
   { label: "Chi Siamo", to: "/about" },
+  { label: "DJ Matrimoni", to: "/dj-matrimoni" },
   { label: "Servizi", to: "/services" },
   { label: "Contatti", to: "/contact" },
 ]
