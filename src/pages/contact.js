@@ -185,7 +185,7 @@ const ContactPage = () => {
               maxWidth: 420,
             }}
           >
-            Verifica la disponibilità, richiedi una canzone su misura o semplicemente
+            Verifica la disponibilità per il tuo evento o semplicemente
             inizia a dialogare. Ti rispondo entro 24 ore.
           </Typography>
         </Container>
@@ -563,7 +563,7 @@ const ContactPage = () => {
                   name="servizio"
                   value={formData.servizio}
                   onChange={handleInputChange}
-                  placeholder="Es: DJ matrimonio, Canzone su misura"
+                  placeholder="Es: DJ matrimonio, Feste private, Corporate event"
                   variant="outlined"
                   sx={{
                     "& .MuiOutlinedInput-root": {
@@ -784,11 +784,6 @@ const ContactPage = () => {
                 domanda: "Quali sono i vostri costi?",
                 risposta:
                   "I prezzi variano a seconda del tipo di evento e dei servizi richiesti. Contattami per un preventivo personalizzato senza impegno.",
-              },
-              {
-                domanda: "Potete comporre una canzone personalizzata?",
-                risposta:
-                  "Sì, offro il servizio di composizione di canzoni su misura. Che sia per la prima danza o per sorprendere la persona cara, posso creare una traccia unica.",
               },
               {
                 domanda: "Qual è la vostra zona di lavoro?",

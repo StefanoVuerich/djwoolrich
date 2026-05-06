@@ -28,21 +28,6 @@ const servicesData = [
     ],
   },
   {
-    titolo: "Canzoni Su Misura",
-    sottotitolo: "Un regalo musicale unico e personalizzato",
-    descrizione:
-      "Rendi indimenticabile un momento speciale con una canzone originale creata appositamente per voi. Che sia per un matrimonio, un anniversario, un compleanno o una proposta di matrimonio, compongo canzoni autentiche basate sulla vostra storia vera. Un regalo esclusivo che rimarrà nel cuore per sempre.",
-    dettagli: [
-      "Testo e melodia originali e autentici",
-      "Basati sulla vostra storia vera",
-      "Consegna in formato audio professionale",
-      "Possibilità di registrazione studio",
-      "Perfetta per la prima danza o il momento speciale",
-      "Velocità di realizzazione rapida",
-      "Assistenza per modifiche e revisioni",
-    ],
-  },
-  {
     titolo: "DJ per Feste Private",
     sottotitolo: "Anima la vostra festa con la giusta colonna sonora",
     descrizione:

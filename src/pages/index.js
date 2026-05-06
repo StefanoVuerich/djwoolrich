@@ -26,19 +26,6 @@ const servizi = [
     cta: "Verifica disponibilità",
     ctaHref: "/contact",
   },
-  {
-    titolo: "Canzone Su Misura",
-    descrizione:
-      "Un regalo unico e personale. Compongo canzoni originali su commissione per matrimoni, anniversari, compleanni o qualsiasi momento speciale che vuoi celebrare.",
-    punti: [
-      "Testo e melodia originali",
-      "Basata sulla vostra storia vera",
-      "Consegna in formato audio professionale",
-      "Perfetta per la prima danza",
-    ],
-    cta: "Richiedi una canzone",
-    ctaHref: "/contact",
-  },
 ]
 
 // Citazione

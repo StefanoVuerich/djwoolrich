@@ -1,4 +1,6 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import Breadcrumb from "../components/Breadcrumb"
 import {
@@ -10,7 +12,26 @@ import {
   Divider,
 } from "@mui/material"
 
-const IndexPage = () => (
+const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      heroImage: file(name: { eq: "hero" }) {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
+      profileImage: file(name: { eq: "profile" }) {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
+    }
+  `)
+
+  const heroImg = getImage(data.heroImage)
+  const profileImg = getImage(data.profileImage)
+
+  return (
   <Layout>
 
     {/* ── BREADCRUMB ────────────────────────────────── */}
@@ -115,22 +136,17 @@ const IndexPage = () => (
             </Box>
           </Grid>
 
-          {/* Placeholder foto hero */}
+          {/* Foto hero DJ */}
           <Grid item size={{ xs: 12, md: 6 }}>
-            <Box
-              sx={{
-                width: "100%",
-                aspectRatio: "4/5",
-                backgroundColor: "#e0e0e0",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Typography sx={{ color: "#aaa", fontSize: "0.875rem" }}>
-                Foto DJ
-              </Typography>
-            </Box>
+            {heroImg && (
+              <Box
+                sx={{
+                  overflow: "hidden",
+                }}
+              >
+                <GatsbyImage image={heroImg} alt="DJ Woolrich - Foto Hero" />
+              </Box>
+            )}
           </Grid>
         </Grid>
       </Container>
@@ -140,23 +156,18 @@ const IndexPage = () => (
     <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: "#fff" }}>
       <Container maxWidth="lg">
         <Grid container spacing={6} alignItems="center">
-          {/* Placeholder immagine */}
+          {/* Foto profilo DJ */}
           <Grid item size={{ xs: 12, md: 5 }}>
-            <Box
-              sx={{
-                width: "100%",
-                aspectRatio: "1/1",
-                backgroundColor: "#f5f5f5",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                border: "1px solid #e8e8e8",
-              }}
-            >
-              <Typography sx={{ color: "#aaa", fontSize: "0.875rem" }}>
-                Foto profilo
-              </Typography>
-            </Box>
+            {profileImg && (
+              <Box
+                sx={{
+                  border: "1px solid #e8e8e8",
+                  overflow: "hidden",
+                }}
+              >
+                <GatsbyImage image={profileImg} alt="DJ Woolrich - Foto Profilo" />
+              </Box>
+            )}
           </Grid>
 
           <Grid item size={{ xs: 12, md: 7 }}>
@@ -472,7 +483,8 @@ const IndexPage = () => (
     </Box>
 
   </Layout>
-)
+    )
+}
 
 export default IndexPage
 

@@ -33,16 +33,6 @@ const serviziMatrimoniali = [
     ],
   },
   {
-    titolo: "Composizione Personalizzata",
-    descrizione: "Una canzone unica per un momento unico. Compongo brani originali per la vostra prima danza o per sorprendere il vostro amore.",
-    punti: [
-      "Testo basato sulla vostra storia vera",
-      "Melodia original e professionale",
-      "Registrazione in formato audio hi-fi",
-      "Consegna in anticipo per prove",
-    ],
-  },
-  {
     titolo: "Servizio Completo",
     descrizione: "Vi seguo in ogni aspetto: dal primo incontro al giorno del matrimonio, come un vero direttore musicale della vostra festa.",
     punti: [
@@ -615,6 +605,6 @@ const DjMatrimoniPage = () => (
   </Layout>
 )
 
-export default DjMatrimonPage
+export default DjMatrimoniPage
 
 export const Head = () => <title>DJ Matrimonio — DJ Woolrich</title>
