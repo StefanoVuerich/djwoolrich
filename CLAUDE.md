@@ -6,7 +6,7 @@
 
 ## UI Framework
 
-- **Material UI**: Utilizzare Material UI come libreria di componenti primaria. Sfruttare il sistema di design MUI per coerenza visiva e accessibilità.
+- **Material UI**: Utilizzare Material UI come libreria di componenti primaria. Sfruttare il sistema di design MUI per coerenza visiva e accessibilità. Utilizza sintassi per MUI versione 9.
 
 ## Codice
 
