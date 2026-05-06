@@ -1,6 +1,4 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import {
   Box,
@@ -85,21 +83,6 @@ const servicesData = [
       "Assistenza tecnica durante l'evento",
       "Paccchetti personalizzati in base allo spazio",
       "Consulenza tecnica gratuita",
-    ],
-  },
-  {
-    titolo: "Consulenza Musicale",
-    sottotitolo: "La giusta musica per il vostro evento",
-    descrizione:
-      "Non sapete da dove iniziare? Offro servizi di consulenza musicale per aiutarvi a scegliere la musica giusta per il vostro evento. Analizziamo insieme gli obiettivi, il pubblico e l'atmosfera desiderata, creando una strategia musicale vincente.",
-    dettagli: [
-      "Analisi delle vostre necessità e preferenze",
-      "Consigli su generi musicali e stili",
-      "Creazione di playlist tematiche",
-      "Suggerimenti su timing e sequenza musicale",
-      "Supporto nella scelta dell'intrattenimento",
-      "Disponibilità anche via telefono e video call",
-      "Servizio orientato al vostro budget",
     ],
   },
   {
@@ -298,7 +281,7 @@ const ServicesPage = () => {
                         letterSpacing: "0.05em",
                       }}
                     >
-                      Cosa Incluye:
+                      Cosa Include:
                     </Typography>
                     <Box component="ul" sx={{ pl: 0, listStyle: "none" }}>
                       {service.dettagli.map((dettaglio) => (

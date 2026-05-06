@@ -8,23 +8,33 @@ import {
   Typography,
   Button,
   Grid,
-  Divider,
 } from "@mui/material"
 
-// Dati servizi
-const servizi = [
+// Tutti i servizi
+const allServices = [
   {
     titolo: "DJ Matrimonio",
-    descrizione:
-      "Rendi il tuo matrimonio indimenticabile con la musica giusta. Dalla cerimonia al ricevimento, creo l'atmosfera perfetta per ogni momento della vostra giornata speciale.",
-    punti: [
-      "Cerimonia, cocktail e ricevimento",
-      "Playlist personalizzata con gli sposi",
-      "Impianto audio e luci professionale",
-      "Coordinamento con il wedding planner",
-    ],
-    cta: "Verifica disponibilità",
-    ctaHref: "/contact",
+    sottotitolo: "La musica perfetta per il vostro grande giorno",
+  },
+  {
+    titolo: "DJ per Feste Private",
+    sottotitolo: "Anima la vostra festa con la giusta colonna sonora",
+  },
+  {
+    titolo: "DJ per Corporate Events",
+    sottotitolo: "Professionisti che capiscono il vostro stile aziendale",
+  },
+  {
+    titolo: "DJ per Feste di Compleanno",
+    sottotitolo: "Rendi il compleanno un giorno indimenticabile",
+  },
+  {
+    titolo: "Impianto Audio e Luci Professionali",
+    sottotitolo: "Tecnologia di qualità per il vostro evento",
+  },
+  {
+    titolo: "Karaoke DJ",
+    sottotitolo: "Il divertimento della musica dal vivo",
   },
 ]
 
@@ -243,93 +253,72 @@ const IndexPage = () => {
           I miei servizi
         </Typography>
 
-        <Grid container spacing={4}>
-          {servizi.map((s) => (
-            <Grid item size={{ xs: 12, md: 6 }} key={s.titolo}>
+        <Grid container spacing={4} sx={{ mb: 6 }}>
+          {allServices.map((service) => (
+            <Grid item size={{ xs: 12, md: 6, lg: 4 }} key={service.titolo}>
               <Box
                 sx={{
                   backgroundColor: "#fff",
-                  p: { xs: 4, md: 5 },
+                  p: 4,
                   height: "100%",
                   display: "flex",
                   flexDirection: "column",
                   border: "1px solid #e8e8e8",
-                  transition: "box-shadow 0.3s ease, transform 0.3s ease",
+                  transition: "all 0.3s ease",
                   "&:hover": {
-                    boxShadow: "0 8px 32px rgba(0,0,0,0.08)",
+                    boxShadow: "0 8px 24px rgba(0,0,0,0.08)",
                     transform: "translateY(-4px)",
+                    borderColor: "#1a1a1a",
                   },
                 }}
               >
                 <Typography
-                  variant="h5"
-                  sx={{ fontWeight: 700, color: "#1a1a1a", mb: 2 }}
-                >
-                  {s.titolo}
-                </Typography>
-                <Divider sx={{ mb: 3, borderColor: "#e8e8e8" }} />
-                <Typography
-                  variant="body2"
-                  sx={{ color: "#666", lineHeight: 1.8, mb: 3 }}
-                >
-                  {s.descrizione}
-                </Typography>
-                <Box
-                  component="ul"
-                  sx={{ pl: 0, mb: 4, listStyle: "none", flexGrow: 1 }}
-                >
-                  {s.punti.map((p) => (
-                    <Box
-                      component="li"
-                      key={p}
-                      sx={{
-                        display: "flex",
-                        alignItems: "flex-start",
-                        gap: 1.5,
-                        mb: 1.2,
-                        fontSize: "0.875rem",
-                        color: "#444",
-                      }}
-                    >
-                      <Box
-                        component="span"
-                        sx={{
-                          width: 4,
-                          height: 4,
-                          borderRadius: "50%",
-                          backgroundColor: "#1a1a1a",
-                          mt: "8px",
-                          flexShrink: 0,
-                        }}
-                      />
-                      {p}
-                    </Box>
-                  ))}
-                </Box>
-                <Button
-                  href={s.ctaHref}
-                  disableElevation
+                  variant="h6"
                   sx={{
-                    alignSelf: "flex-start",
-                    backgroundColor: "#1a1a1a",
-                    color: "#fff",
-                    borderRadius: 0,
-                    px: 3,
-                    py: 1.2,
-                    fontSize: "0.75rem",
-                    fontWeight: 500,
-                    letterSpacing: "0.06em",
-                    textTransform: "uppercase",
-                    "&:hover": { backgroundColor: "#444" },
-                    transition: "background-color 0.3s ease",
+                    fontWeight: 700,
+                    color: "#1a1a1a",
+                    mb: 2,
+                    fontSize: "1rem",
                   }}
                 >
-                  {s.cta}
-                </Button>
+                  {service.titolo}
+                </Typography>
+                <Typography
+                  sx={{
+                    color: "#666",
+                    fontSize: "0.875rem",
+                    lineHeight: 1.6,
+                    flexGrow: 1,
+                  }}
+                >
+                  {service.sottotitolo}
+                </Typography>
               </Box>
             </Grid>
           ))}
         </Grid>
+
+        <Box sx={{ textAlign: "center" }}>
+          <Button
+            href="/services"
+            disableElevation
+            sx={{
+              backgroundColor: "#1a1a1a",
+              color: "#fff",
+              borderRadius: 0,
+              px: 5,
+              py: 1.5,
+              fontSize: "0.8rem",
+              fontWeight: 600,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              "&:hover": { backgroundColor: "#444" },
+              transition: "background-color 0.3s ease",
+            }}
+          >
+            Scopri Tutti i Dettagli
+          </Button>
+        </Box>
       </Container>
     </Box>
 
