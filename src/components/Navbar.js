@@ -1,14 +1,14 @@
 import React, { useState } from "react"
-import { AppBar, Toolbar, Typography, Button, Menu, MenuItem, Container, Box, Divider } from "@mui/material"
+import { AppBar, Toolbar, Typography, Button, Menu, MenuItem, Container, Box } from "@mui/material"
 import MenuIcon from "@mui/icons-material/Menu"
 import CloseIcon from "@mui/icons-material/Close"
 import IconButton from "@mui/material/IconButton"
 import { Link as GatsbyLink } from "gatsby"
 
 const menuItems = [
+  { label: "Home", to: "/" },
   { label: "Chi Siamo", to: "/about" },
   { label: "Servizi", to: "/services" },
-  { label: "Blog", to: "/blog" },
   { label: "Contatti", to: "/contact" },
 ]
 
@@ -79,28 +79,6 @@ const Navbar = () => {
                 {item.label}
               </Button>
             ))}
-            <Button
-              component={GatsbyLink}
-              to="/contact"
-              disableRipple
-              sx={{
-                ml: 2,
-                px: 3,
-                py: 1,
-                backgroundColor: "#1a1a1a",
-                color: "#ffffff",
-                textTransform: "none",
-                fontSize: "0.8rem",
-                fontWeight: 500,
-                borderRadius: 0,
-                "&:hover": {
-                  backgroundColor: "#444",
-                },
-                transition: "background-color 0.3s ease",
-              }}
-            >
-              Verifica disponibilità
-            </Button>
           </Box>
 
           {/* Hamburger mobile */}
@@ -151,22 +129,6 @@ const Navbar = () => {
                   {item.label}
                 </MenuItem>
               ))}
-              <Divider sx={{ my: 1 }} />
-              <MenuItem
-                component={GatsbyLink}
-                to="/contact"
-                onClick={handleMenuClose}
-                sx={{
-                  fontSize: "0.875rem",
-                  fontWeight: 500,
-                  py: 1.5,
-                  px: 3,
-                  color: "#1a1a1a",
-                  "&:hover": { backgroundColor: "#f5f5f5" },
-                }}
-              >
-                Verifica disponibilità
-              </MenuItem>
             </Menu>
           </Box>
 
