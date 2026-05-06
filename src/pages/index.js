@@ -113,7 +113,7 @@ const IndexPage = () => {
       <Box sx={{ position: "relative", zIndex: 2, width: "100%" }}>
       <Container maxWidth="lg">
         <Grid container alignItems="center">
-          <Grid item size={{ xs: 12, md: 8 }}>
+          <Grid item size={{ xs: 12, md: 12 }}>
             <Typography
               variant="overline"
               sx={{
@@ -136,11 +136,7 @@ const IndexPage = () => {
                 mb: 3,
               }}
             >
-              Musica per i
-              <br />
-              tuoi momenti
-              <br />
-              speciali.
+            Musica per i tuoi momenti speciali.
             </Typography>
             <Typography
               variant="body1"
@@ -149,11 +145,11 @@ const IndexPage = () => {
                 color: "rgba(255, 255, 255, 0.85)",
                 lineHeight: 1.8,
                 mb: 4,
-                maxWidth: 420,
               }}
             >
-              DJ matrimonio e canzoni su misura. Porto la musica giusta
-              nel momento giusto, perché i ricordi durano per sempre.
+              DJ matrimonio e canzoni su misura. 
+              <br/>
+              Porto la musica giusta nel momento giusto, perché i ricordi durano per sempre.
             </Typography>
             <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
               <Button
