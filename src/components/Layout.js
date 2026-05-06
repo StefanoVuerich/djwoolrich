@@ -2,6 +2,7 @@ import React from "react"
 import { Box } from "@mui/material"
 import Navbar from "./Navbar"
 import Footer from "./Footer"
+import "../styles/style.scss"
 
 // Layout wrapper per visualizzare Navbar e Footer su tutte le pagine
 const Layout = ({ children }) => {
