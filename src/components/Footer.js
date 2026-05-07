@@ -4,6 +4,7 @@ import FacebookIcon from "@mui/icons-material/Facebook"
 import InstagramIcon from "@mui/icons-material/Instagram"
 import YouTubeIcon from "@mui/icons-material/YouTube"
 import IconButton from "@mui/material/IconButton"
+import { useCookieContext } from "../contexts/CookieContext"
 
 const navLinks = [
   { label: "Chi Siamo", href: "/about" },
@@ -26,6 +27,7 @@ const socialLinks = [
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
+  const { openCookiePreferences } = useCookieContext()
 
   return (
     <Box
@@ -183,7 +185,7 @@ const Footer = () => {
           <Typography variant="body2" sx={{ color: "#999", fontSize: "0.8rem" }}>
             &copy; {currentYear} DJ Woolrich. Tutti i diritti riservati.
           </Typography>
-          <Box sx={{ display: "flex", gap: 3 }}>
+          <Box sx={{ display: "flex", gap: 3, flexWrap: "wrap" }}>
             {legalLinks.map((link) => (
               <Link
                 key={link.href}
@@ -199,6 +201,19 @@ const Footer = () => {
                 {link.label}
               </Link>
             ))}
+            <Link
+              onClick={openCookiePreferences}
+              sx={{
+                fontSize: "0.8rem",
+                color: "#999",
+                textDecoration: "none",
+                cursor: "pointer",
+                "&:hover": { color: "#1a1a1a" },
+                transition: "color 0.3s ease",
+              }}
+            >
+              Gestisci Cookie
+            </Link>
           </Box>
         </Box>
       </Container>

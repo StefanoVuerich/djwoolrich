@@ -86,7 +86,7 @@ const CookiePage = () => (
               mb: 2,
             }}
           >
-            2. Tipologie di Cookie Utilizzati
+            2. Tipologie di Cookie Utilizzati e Durata
           </Typography>
           <Typography
             variant="body2"
@@ -103,13 +103,15 @@ const CookiePage = () => (
                 mb: 1,
               }}
             >
-              Cookie Tecnici
+              Cookie Tecnici (Sessione)
             </Typography>
             <Typography
               variant="body2"
               sx={{ color: "#666", lineHeight: 1.9 }}
             >
-              Necessari per il corretto funzionamento del sito web. Questi cookie non richiedono il vostro consenso esplicito.
+              <strong>Necessità:</strong> Essenziali per il corretto funzionamento del sito web.<br />
+              <strong>Durata:</strong> Rimangono fino alla chiusura del browser (sessione)<br />
+              <strong>Consenso:</strong> Non richiedono consenso esplicito
             </Typography>
           </Box>
           <Box sx={{ mb: 3 }}>
@@ -121,13 +123,16 @@ const CookiePage = () => (
                 mb: 1,
               }}
             >
-              Cookie di Analisi
+              Cookie di Analisi (Google Analytics)
             </Typography>
             <Typography
               variant="body2"
               sx={{ color: "#666", lineHeight: 1.9 }}
             >
-              Ci aiutano a capire come utilizzate il nostro sito, quali pagine visitate e quali azioni compite. Questi cookie raccolgono dati in forma anonima.
+              <strong>Necessità:</strong> Ci aiutano a capire come utilizzate il nostro sito, quali pagine visitate e quali azioni compite. Questi cookie raccolgono dati in forma anonima.<br />
+              <strong>Durata:</strong> 13 mesi<br />
+              <strong>Consenso:</strong> Richiedono il vostro consenso esplicito prima di essere installati<br />
+              <strong>Nota:</strong> Questo cookie verrà bloccato fino a quando non darete il vostro consenso tramite il banner cookie.
             </Typography>
           </Box>
           <Box>
@@ -139,13 +144,15 @@ const CookiePage = () => (
                 mb: 1,
               }}
             >
-              Cookie di Preferenza
+              Cookie di Preferenza e Consenso
             </Typography>
             <Typography
               variant="body2"
               sx={{ color: "#666", lineHeight: 1.9 }}
             >
-              Utilizzati per ricordare le vostre preferenze, come le impostazioni di lingua o tema, per personalizzare la vostra esperienza.
+              <strong>Necessità:</strong> Utilizzati per ricordare le vostre preferenze, come le impostazioni di lingua, tema, e soprattutto le vostre scelte di consenso ai cookie.<br />
+              <strong>Durata:</strong> 12 mesi<br />
+              <strong>Consenso:</strong> Necessari per documentare le vostre scelte di privacy
             </Typography>
           </Box>
         </Box>
@@ -165,7 +172,52 @@ const CookiePage = () => (
             variant="body2"
             sx={{ color: "#666", lineHeight: 1.9 }}
           >
-            Utilizziamo Google Analytics per raccogliere informazioni su come gli utenti interagiscono con il nostro sito. Questi dati vengono trattati secondo la Google Analytics Privacy Policy.
+            Utilizziamo Google Analytics per raccogliere informazioni su come gli utenti interagiscono con il nostro sito. Questi dati vengono trattati secondo la{" "}
+            <Typography
+              component="a"
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: "#1a1a1a",
+                fontWeight: 600,
+                textDecoration: "underline",
+              }}
+            >
+              Google Analytics Privacy Policy
+            </Typography>. Google Analytics non caricherà fino a quando non avrete fornito il consenso tramite il banner cookie.
+          </Typography>
+        </Box>
+
+        <Box sx={{ mb: 6 }}>
+          <Typography
+            variant="h5"
+            sx={{
+              fontWeight: 700,
+              color: "#1a1a1a",
+              mb: 2,
+            }}
+          >
+            3bis. EmailJS e Modulo di Contatto
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{ color: "#666", lineHeight: 1.9 }}
+          >
+            Il modulo di contatto utilizza EmailJS per inviare le vostre richieste. EmailJS potrebbe impostare cookie tecnici necessari per il funzionamento del servizio. Per ulteriori informazioni, consultate la{" "}
+            <Typography
+              component="a"
+              href="https://www.emailjs.com/legal/privacy-policy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: "#1a1a1a",
+                fontWeight: 600,
+                textDecoration: "underline",
+              }}
+            >
+              Privacy Policy di EmailJS
+            </Typography>.
           </Typography>
         </Box>
 
@@ -228,13 +280,30 @@ const CookiePage = () => (
               mb: 2,
             }}
           >
-            6. Consenso ai Cookie
+            6. Banner di Consenso e Consenso Granulare
           </Typography>
           <Typography
             variant="body2"
-            sx={{ color: "#666", lineHeight: 1.9 }}
+            sx={{ color: "#666", lineHeight: 1.9, mb: 2 }}
           >
-            Quando visitate il nostro sito per la prima volta, vi chiederemo il consenso per l'uso di cookie non tecnici. Potete modificare le vostre preferenze in qualsiasi momento.
+            Quando visitate il nostro sito per la prima volta, comparirà un banner che vi chiede il consenso per l'uso di cookie non tecnici. <strong>Nessun cookie di analisi o preferenza sarà installato fino a quando non avrete espresso il vostro consenso.</strong>
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{ color: "#666", lineHeight: 1.9, fontWeight: 600, mb: 1 }}
+          >
+            Le vostre opzioni nel banner:
+          </Typography>
+          <Box component="ul" sx={{ pl: 2, color: "#666", lineHeight: 1.9 }}>
+            <li><strong>Rifiuta tutto:</strong> Rifiuta tutti i cookie non tecnici (consigliato se non volete essere tracciati)</li>
+            <li><strong>Accetta tutto:</strong> Accetta tutti i cookie, inclusi analisi e preferenze</li>
+            <li><strong>Personalizza:</strong> Apre un pannello dove potete scegliere singolarmente ogni categoria di cookie</li>
+          </Box>
+          <Typography
+            variant="body2"
+            sx={{ color: "#666", lineHeight: 1.9, mt: 2 }}
+          >
+            <strong>Diritto di cambiare idea:</strong> Potete modificare le vostre preferenze ai cookie in qualsiasi momento tramite le impostazioni del sito o contattandoci direttamente a info@djwoolrich.it.
           </Typography>
         </Box>
 
@@ -266,13 +335,57 @@ const CookiePage = () => (
               mb: 2,
             }}
           >
-            8. Modifiche a Questa Policy
+            8. Conformità Normativa e Autorità Competente
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{ color: "#666", lineHeight: 1.9, mb: 2 }}
+          >
+            Questa Cookie Policy è conforme a:
+          </Typography>
+          <Box component="ul" sx={{ pl: 2, color: "#666", lineHeight: 1.9, mb: 2 }}>
+            <li>GDPR (Regolamento (UE) 2016/679)</li>
+            <li>Codice della Privacy italiano (D.Lgs. 196/2003, come modificato dal D.Lgs. 101/2018)</li>
+            <li>Linee Guida del Garante per la Protezione dei Dati Personali</li>
+            <li>Linee Guida AGCOM sui cookie</li>
+          </Box>
+          <Typography
+            variant="body2"
+            sx={{ color: "#666", lineHeight: 1.9 }}
+          >
+            Per informazioni sulla normativa italiana sui cookie, visitate il sito del{" "}
+            <Typography
+              component="a"
+              href="https://www.garanteprivacy.it/temi/cookie"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: "#1a1a1a",
+                fontWeight: 600,
+                textDecoration: "underline",
+              }}
+            >
+              Garante per la Protezione dei Dati Personali
+            </Typography>.
+          </Typography>
+        </Box>
+
+        <Box sx={{ mb: 6 }}>
+          <Typography
+            variant="h5"
+            sx={{
+              fontWeight: 700,
+              color: "#1a1a1a",
+              mb: 2,
+            }}
+          >
+            9. Modifiche a Questa Policy
           </Typography>
           <Typography
             variant="body2"
             sx={{ color: "#666", lineHeight: 1.9 }}
           >
-            Ci riserviamo il diritto di aggiornare questa Cookie Policy per riflettere i cambiamenti nei nostri processi. Vi invitiamo a consultarla regolarmente.
+            Ci riserviamo il diritto di aggiornare questa Cookie Policy per riflettere i cambiamenti nei nostri processi o per adeguarci a eventuali nuove normative. Vi invitiamo a consultarla regolarmente.
           </Typography>
         </Box>
 

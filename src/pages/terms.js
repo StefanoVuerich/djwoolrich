@@ -270,7 +270,45 @@ const TermsPage = () => (
             mt: 4,
           }}
         >
-          8. Modifiche ai Termini
+          8. Elaborazione dei Dati e Servizi Esterni
+        </Typography>
+        <Typography
+          variant="body1"
+          sx={{
+            color: "#666",
+            lineHeight: 1.8,
+            mb: 4,
+          }}
+        >
+          Per gestire le richieste di contatto inviate tramite il modulo, utilizziamo EmailJS,
+          un servizio esterno di elaborazione email. I dati del modulo saranno inviati a EmailJS
+          per elaborare l'invio della email. Consulta la{" "}
+          <Typography
+            component="a"
+            href="/privacy"
+            sx={{
+              color: "#1a1a1a",
+              fontWeight: 600,
+              textDecoration: "underline",
+            }}
+          >
+            Privacy Policy
+          </Typography>{" "}
+          per ulteriori dettagli su come i tuoi dati vengono trattati.
+        </Typography>
+
+        {/* Sezione 9 */}
+        <Typography
+          variant="h4"
+          sx={{
+            fontSize: "1.5rem",
+            fontWeight: 700,
+            color: "#1a1a1a",
+            mb: 2,
+            mt: 4,
+          }}
+        >
+          9. Modifiche ai Termini
         </Typography>
         <Typography
           variant="body1"
@@ -286,7 +324,7 @@ const TermsPage = () => (
           accettazione dei nuovi Termini.
         </Typography>
 
-        {/* Sezione 9 */}
+        {/* Sezione 10 */}
         <Typography
           variant="h4"
           sx={{
@@ -297,7 +335,36 @@ const TermsPage = () => (
             mt: 4,
           }}
         >
-          9. Contatti
+          10. Legge Applicabile e Competenza Territoriale
+        </Typography>
+        <Typography
+          variant="body1"
+          sx={{
+            color: "#666",
+            lineHeight: 1.8,
+            mb: 4,
+          }}
+        >
+          Questi Termini e Condizioni sono disciplinati dalla legge italiana, in particolare dal
+          Codice Civile, dal Codice del Consumo (D.Lgs. 206/2005) e dalle normative sulla
+          protezione dei dati personali (GDPR e D.Lgs. 196/2003). Qualsiasi controversia relativa
+          a questi Termini sarà sottoposta alla competenza esclusiva dei tribunali competenti
+          territorialmente in Italia. Se siete consumatori residenti nell'UE, le vostre diritti di
+          consumatore previsti dalla legge sono comunque garantiti.
+        </Typography>
+
+        {/* Sezione 11 */}
+        <Typography
+          variant="h4"
+          sx={{
+            fontSize: "1.5rem",
+            fontWeight: 700,
+            color: "#1a1a1a",
+            mb: 2,
+            mt: 4,
+          }}
+        >
+          11. Contatti
         </Typography>
         <Typography
           variant="body1"

@@ -157,13 +157,38 @@ const PrivacyPage = () => (
               mb: 2,
             }}
           >
-            5. Destinatari dei Dati
+            5. Destinatari dei Dati e Processori
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{ color: "#666", lineHeight: 1.9, mb: 2 }}
+          >
+            I vostri dati non vengono condivisi con terze parti, salvo quando necessario per l'esecuzione dei servizi richiesti.
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{ color: "#666", lineHeight: 1.9, fontWeight: 600, mb: 1 }}
+          >
+            EmailJS - Responsabile del Trattamento:
           </Typography>
           <Typography
             variant="body2"
             sx={{ color: "#666", lineHeight: 1.9 }}
           >
-            I vostri dati non vengono condivisi con terze parti, salvo quando necessario per l'esecuzione dei servizi richiesti (ad esempio, fornitori di servizi di email o hosting).
+            I dati personali forniti tramite il modulo di contatto (nome, email, telefono, messaggio) vengono inviati a <strong>EmailJS</strong> (emailjs.com), un servizio di elaborazione email che funge da Responsabile del Trattamento dei Dati. EmailJS elabora i vostri dati esclusivamente per inviare la email a DJ Woolrich. I dati non vengono conservati da EmailJS oltre il tempo necessario per l'invio. Per ulteriori informazioni sulla privacy di EmailJS, consultate la loro{" "}
+            <Typography
+              component="a"
+              href="https://www.emailjs.com/legal/privacy-policy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: "#1a1a1a",
+                fontWeight: 600,
+                textDecoration: "underline",
+              }}
+            >
+              Privacy Policy
+            </Typography>.
           </Typography>
         </Box>
 
@@ -182,7 +207,18 @@ const PrivacyPage = () => (
             variant="body2"
             sx={{ color: "#666", lineHeight: 1.9 }}
           >
-            I dati personali vengono conservati per il tempo necessario a completare la comunicazione e a fornire i servizi richiesti. Successivamente, vengono cancellati o anonimizzati, salvo obblighi legali di conservazione.
+            I dati personali vengono conservati per il seguente periodo:
+          </Typography>
+          <Box component="ul" sx={{ pl: 2, color: "#666", lineHeight: 1.9, mt: 2 }}>
+            <li><strong>Contatti generici:</strong> 12 mesi dopo l'ultimo contatto</li>
+            <li><strong>Clienti con evento prenotato:</strong> fino a 12 mesi dopo la conclusione dell'evento</li>
+            <li><strong>Obblighi contabili:</strong> 10 anni (per legge italiana)</li>
+          </Box>
+          <Typography
+            variant="body2"
+            sx={{ color: "#666", lineHeight: 1.9, mt: 2 }}
+          >
+            Successivamente al termine previsto, i dati vengono cancellati o anonimizzati, salvo diversi obblighi legali di conservazione.
           </Typography>
         </Box>
 
@@ -247,7 +283,72 @@ const PrivacyPage = () => (
               mb: 2,
             }}
           >
-            9. Modifiche alla Privacy Policy
+            9. Come Ritirare il Consenso
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{ color: "#666", lineHeight: 1.9 }}
+          >
+            Potete ritirare il vostro consenso al trattamento dei dati personali in qualsiasi momento contattandoci a <strong>info@djwoolrich.it</strong>. Una volta ritirato il consenso, non continueremo a elaborare i vostri dati per le finalità comunicate, salvo obblighi legali.
+          </Typography>
+        </Box>
+
+        <Box sx={{ mb: 6 }}>
+          <Typography
+            variant="h5"
+            sx={{
+              fontWeight: 700,
+              color: "#1a1a1a",
+              mb: 2,
+            }}
+          >
+            10. Autorità di Controllo
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{ color: "#666", lineHeight: 1.9, mb: 2 }}
+          >
+            Se ritenete che il vostro diritto alla privacy sia stato violato, potete presentare un reclamo all'autorità di protezione dei dati competente:
+          </Typography>
+          <Box sx={{
+            backgroundColor: "#f5f5f5",
+            p: 3,
+            border: "1px solid #e8e8e8",
+            mb: 2,
+          }}>
+            <Typography variant="body2" sx={{ color: "#1a1a1a", fontWeight: 600, mb: 1 }}>
+              Garante per la Protezione dei Dati Personali (Italia)
+            </Typography>
+            <Typography variant="body2" sx={{ color: "#666", lineHeight: 1.9 }}>
+              Via Buonarroti 27 - 00185 Roma<br />
+              <Typography
+                component="a"
+                href="https://www.garanteprivacy.it"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  color: "#1a1a1a",
+                  fontWeight: 600,
+                  textDecoration: "none",
+                  "&:hover": { textDecoration: "underline" },
+                }}
+              >
+                www.garanteprivacy.it
+              </Typography>
+            </Typography>
+          </Box>
+        </Box>
+
+        <Box sx={{ mb: 6 }}>
+          <Typography
+            variant="h5"
+            sx={{
+              fontWeight: 700,
+              color: "#1a1a1a",
+              mb: 2,
+            }}
+          >
+            11. Modifiche alla Privacy Policy
           </Typography>
           <Typography
             variant="body2"
