@@ -214,7 +214,7 @@ select {
   }
 
   &::placeholder {
-    color: lighten($color-text-light, 20%);
+    color: color.adjust($color-text-light, $lightness: 20%);
   }
 }
 
