@@ -7,9 +7,8 @@ import IconButton from "@mui/material/IconButton"
 
 const navLinks = [
   { label: "Chi Siamo", href: "/about" },
-  { label: "DJ Matrimonio", href: "/services" },
-  { label: "Canzoni Su Misura", href: "/custom-songs" },
-  { label: "Blog", href: "/blog" },
+  { label: "DJ Matrimoni", href: "/dj-matrimoni/" },
+  { label: "Servizi", href: "/services" },
   { label: "Contatti", href: "/contact" },
 ]
 
@@ -139,9 +138,6 @@ const Footer = () => {
               Contatti
             </Typography>
             <Box sx={{ display: "flex", flexDirection: "column", gap: 1.2 }}>
-              <Typography variant="body2" sx={{ color: "#666", fontSize: "0.875rem" }}>
-                Disponibile su appuntamento
-              </Typography>
               <Link
                 href="mailto:info@djwoolrich.it"
                 sx={{
