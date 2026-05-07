@@ -1,5 +1,8 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
+import Breadcrumb from "../components/Breadcrumb"
 import {
   Box,
   Container,
@@ -103,77 +106,129 @@ const servicesData = [
 ]
 
 const ServicesPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      heroImage: file(name: { eq: "hero" }) {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
+    }
+  `)
+
+  const heroImg = getImage(data.heroImage)
+
   return (
     <Layout>
       {/* ── HERO ──────────────────────────────────────── */}
       <Box
         sx={{
-          minHeight: { xs: "40vh", md: "50vh" },
+          minHeight: { xs: "60vh", md: "80vh" },
           display: "flex",
           alignItems: "center",
           py: { xs: 8, md: 12 },
-          backgroundColor: "#1a1a1a",
-          color: "#fff",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
-        <Container maxWidth="lg">
-          <Typography
-            variant="overline"
+        {heroImg && (
+          <Box
             sx={{
-              fontSize: "0.75rem",
-              letterSpacing: "0.14em",
-              color: "rgba(255, 255, 255, 0.6)",
-              display: "block",
-              mb: 2,
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              zIndex: 0,
+              "& .gatsby-image-wrapper": {
+                width: "100%",
+                height: "100%",
+              },
             }}
           >
-            I Miei Servizi
-          </Typography>
-          <Typography
-            variant="h1"
-            sx={{
-              fontSize: { xs: "2.5rem", md: "3.5rem" },
-              fontWeight: 700,
-              lineHeight: 1.2,
-              mb: 3,
-            }}
-          >
-            Servizi DJ Professionali
-            <br />a Pordenone
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              fontSize: "1.05rem",
-              color: "rgba(255, 255, 255, 0.8)",
-              lineHeight: 1.8,
-              maxWidth: 600,
-              mb: 4,
-            }}
-          >
-            Dalla musica per matrimoni alle feste private, dai corporate events alla consulenza musicale: scopri tutti i servizi professionali che offro per rendere il vostro evento speciale indimenticabile.
-          </Typography>
-          <Button
-            href="#services"
-            disableElevation
-            sx={{
-              backgroundColor: "#fff",
-              color: "#1a1a1a",
-              borderRadius: 0,
-              px: 4,
-              py: 1.5,
-              fontSize: "0.8rem",
-              fontWeight: 600,
-              letterSpacing: "0.06em",
-              textTransform: "uppercase",
-              "&:hover": { backgroundColor: "#e8e8e8" },
-              transition: "background-color 0.3s ease",
-            }}
-          >
-            Scopri i Servizi
-          </Button>
-        </Container>
+            <GatsbyImage image={heroImg} alt="DJ Woolrich - Servizi" />
+          </Box>
+        )}
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.4)",
+            zIndex: 1,
+          }}
+        />
+        <Box sx={{ position: "relative", zIndex: 2, width: "100%" }}>
+          <Container maxWidth="lg">
+            <Typography
+              variant="overline"
+              sx={{
+                fontSize: "0.75rem",
+                letterSpacing: "0.14em",
+                color: "rgba(255, 255, 255, 0.6)",
+                display: "block",
+                mb: 2,
+              }}
+            >
+              I Miei Servizi
+            </Typography>
+            <Typography
+              variant="h1"
+              sx={{
+                fontSize: { xs: "2.5rem", md: "3.5rem" },
+                fontWeight: 700,
+                lineHeight: 1.2,
+                color: "#fff",
+                mb: 3,
+              }}
+            >
+              Servizi DJ Professionali
+              <br />a Pordenone
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                fontSize: "1.05rem",
+                color: "rgba(255, 255, 255, 0.8)",
+                lineHeight: 1.8,
+                maxWidth: 600,
+                mb: 4,
+              }}
+            >
+              Dalla musica per matrimoni alle feste private, dai corporate events alla consulenza musicale: scopri tutti i servizi professionali che offro per rendere il vostro evento speciale indimenticabile.
+            </Typography>
+            <Button
+              href="#services"
+              disableElevation
+              sx={{
+                backgroundColor: "#fff",
+                color: "#1a1a1a",
+                borderRadius: 0,
+                px: 4,
+                py: 1.5,
+                fontSize: "0.8rem",
+                fontWeight: 600,
+                letterSpacing: "0.06em",
+                textTransform: "uppercase",
+                "&:hover": { backgroundColor: "#e8e8e8" },
+                transition: "background-color 0.3s ease",
+              }}
+            >
+              Scopri i Servizi
+            </Button>
+          </Container>
+        </Box>
       </Box>
+
+      {/* ── BREADCRUMB ────────────────────────────────── */}
+      <Breadcrumb
+        items={[
+          { label: "Home", link: "/" },
+          { label: "Servizi", active: true },
+        ]}
+      />
 
       {/* ── SERVIZI ───────────────────────────────────– */}
       <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: "#fff" }} id="services">

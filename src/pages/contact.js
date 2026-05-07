@@ -1,4 +1,6 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import ContactForm from "../components/ContactForm"
 import Breadcrumb from "../components/Breadcrumb"
@@ -15,9 +17,105 @@ import PhoneIcon from "@mui/icons-material/Phone"
 import LocationOnIcon from "@mui/icons-material/LocationOn"
 
 const ContactPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      heroImage: file(name: { eq: "hero" }) {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
+    }
+  `)
+
+  const heroImg = getImage(data.heroImage)
 
   return (
     <Layout>
+
+      {/* ── HERO ──────────────────────────────────────── */}
+      <Box
+        sx={{
+          minHeight: { xs: "60vh", md: "80vh" },
+          display: "flex",
+          alignItems: "center",
+          py: { xs: 10, md: 0 },
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {heroImg && (
+          <Box
+            sx={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              zIndex: 0,
+              "& .gatsby-image-wrapper": {
+                width: "100%",
+                height: "100%",
+              },
+            }}
+          >
+            <GatsbyImage image={heroImg} alt="DJ Woolrich - Contatti" />
+          </Box>
+        )}
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.4)",
+            zIndex: 1,
+          }}
+        />
+        <Box sx={{ position: "relative", zIndex: 2, width: "100%" }}>
+          <Container maxWidth="lg">
+            <Typography
+              variant="overline"
+              sx={{
+                fontSize: "0.75rem",
+                letterSpacing: "0.14em",
+                color: "rgba(255, 255, 255, 0.7)",
+                display: "block",
+                mb: 2,
+              }}
+            >
+              Contattami
+            </Typography>
+            <Typography
+              variant="h1"
+              sx={{
+                fontSize: { xs: "2.5rem", md: "3.5rem" },
+                fontWeight: 700,
+                lineHeight: 1.1,
+                color: "#fff",
+                mb: 3,
+                maxWidth: 500,
+              }}
+            >
+              Raccontami il tuo
+              <br />
+              giorno speciale
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                fontSize: "1.05rem",
+                color: "rgba(255, 255, 255, 0.85)",
+                lineHeight: 1.8,
+                maxWidth: 420,
+              }}
+            >
+              Verifica la disponibilità per il tuo evento o semplicemente
+              inizia a dialogare. Ti rispondo entro 24 ore.
+            </Typography>
+          </Container>
+        </Box>
+      </Box>
 
       {/* ── BREADCRUMB ────────────────────────────────── */}
       <Breadcrumb
@@ -26,59 +124,6 @@ const ContactPage = () => {
           { label: "Contatti", active: true },
         ]}
       />
-
-      {/* ── HERO ──────────────────────────────────────── */}
-      <Box
-        sx={{
-          minHeight: { xs: "50vh", md: "60vh" },
-          display: "flex",
-          alignItems: "center",
-          backgroundColor: "#f5f5f5",
-          py: { xs: 10, md: 0 },
-        }}
-      >
-        <Container maxWidth="lg">
-          <Typography
-            variant="overline"
-            sx={{
-              fontSize: "0.75rem",
-              letterSpacing: "0.14em",
-              color: "#666",
-              display: "block",
-              mb: 2,
-            }}
-          >
-            Contattami
-          </Typography>
-          <Typography
-            variant="h1"
-            sx={{
-              fontSize: { xs: "2.5rem", md: "3.5rem" },
-              fontWeight: 700,
-              lineHeight: 1.1,
-              color: "#1a1a1a",
-              mb: 3,
-              maxWidth: 500,
-            }}
-          >
-            Raccontami il tuo
-            <br />
-            giorno speciale
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              fontSize: "1.05rem",
-              color: "#666",
-              lineHeight: 1.8,
-              maxWidth: 420,
-            }}
-          >
-            Verifica la disponibilità per il tuo evento o semplicemente
-            inizia a dialogare. Ti rispondo entro 24 ore.
-          </Typography>
-        </Container>
-      </Box>
 
       {/* ── CONTATTI RAPIDI ───────────────────────────── */}
       <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: "#fff" }}>

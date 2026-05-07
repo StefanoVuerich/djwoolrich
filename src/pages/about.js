@@ -34,33 +34,56 @@ const IndexPage = () => {
   return (
   <Layout>
 
-    {/* ── BREADCRUMB ────────────────────────────────── */}
-    <Breadcrumb
-      items={[
-        { label: "Home", link: "/" },
-        { label: "Chi Siamo", active: true },
-      ]}
-    />
-
     {/* ── HERO ──────────────────────────────────────── */}
     <Box
       sx={{
         minHeight: { xs: "60vh", md: "80vh" },
         display: "flex",
         alignItems: "center",
-        backgroundColor: "#f5f5f5",
         py: { xs: 10, md: 0 },
+        position: "relative",
+        overflow: "hidden",
       }}
     >
-      <Container maxWidth="lg">
-        <Grid container spacing={6} alignItems="center">
-          <Grid item size={{ xs: 12, md: 6 }}>
+      {heroImg && (
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            zIndex: 0,
+            "& .gatsby-image-wrapper": {
+              width: "100%",
+              height: "100%",
+            },
+          }}
+        >
+          <GatsbyImage image={heroImg} alt="DJ Woolrich - Chi Siamo" />
+        </Box>
+      )}
+      <Box
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundColor: "rgba(0, 0, 0, 0.4)",
+          zIndex: 1,
+        }}
+      />
+      <Box sx={{ position: "relative", zIndex: 2, width: "100%" }}>
+        <Container maxWidth="lg">
+          <Grid container spacing={6} alignItems="center">
+            <Grid item size={{ xs: 12, md: 6 }}>
             <Typography
               variant="overline"
               sx={{
                 fontSize: "0.75rem",
                 letterSpacing: "0.14em",
-                color: "#666",
+                color: "rgba(255, 255, 255, 0.7)",
                 display: "block",
                 mb: 2,
               }}
@@ -73,7 +96,7 @@ const IndexPage = () => {
                 fontSize: { xs: "2.5rem", md: "3.5rem" },
                 fontWeight: 700,
                 lineHeight: 1.1,
-                color: "#1a1a1a",
+                color: "#fff",
                 mb: 3,
               }}
             >
@@ -83,7 +106,7 @@ const IndexPage = () => {
               variant="body1"
               sx={{
                 fontSize: "1.05rem",
-                color: "#666",
+                color: "rgba(255, 255, 255, 0.85)",
                 lineHeight: 1.8,
                 mb: 4,
                 maxWidth: 420,
@@ -98,8 +121,8 @@ const IndexPage = () => {
                 href="/contact"
                 disableElevation
                 sx={{
-                  backgroundColor: "#1a1a1a",
-                  color: "#fff",
+                  backgroundColor: "#fff",
+                  color: "#1a1a1a",
                   borderRadius: 0,
                   px: 4,
                   py: 1.5,
@@ -107,7 +130,7 @@ const IndexPage = () => {
                   fontWeight: 500,
                   letterSpacing: "0.06em",
                   textTransform: "uppercase",
-                  "&:hover": { backgroundColor: "#444" },
+                  "&:hover": { backgroundColor: "#e8e8e8" },
                   transition: "background-color 0.3s ease",
                 }}
               >
@@ -118,7 +141,7 @@ const IndexPage = () => {
                 disableElevation
                 sx={{
                   backgroundColor: "transparent",
-                  color: "#1a1a1a",
+                  color: "#fff",
                   borderRadius: 0,
                   px: 4,
                   py: 1.5,
@@ -126,8 +149,8 @@ const IndexPage = () => {
                   fontWeight: 500,
                   letterSpacing: "0.06em",
                   textTransform: "uppercase",
-                  border: "1px solid #1a1a1a",
-                  "&:hover": { backgroundColor: "#f5f5f5" },
+                  border: "1px solid #fff",
+                  "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.1)" },
                   transition: "background-color 0.3s ease",
                 }}
               >
@@ -135,22 +158,18 @@ const IndexPage = () => {
               </Button>
             </Box>
           </Grid>
-
-          {/* Foto hero DJ */}
-          <Grid item size={{ xs: 12, md: 6 }}>
-            {heroImg && (
-              <Box
-                sx={{
-                  overflow: "hidden",
-                }}
-              >
-                <GatsbyImage image={heroImg} alt="DJ Woolrich - Foto Hero" />
-              </Box>
-            )}
-          </Grid>
         </Grid>
       </Container>
+        </Box>
     </Box>
+
+    {/* ── BREADCRUMB ────────────────────────────────── */}
+    <Breadcrumb
+      items={[
+        { label: "Home", link: "/" },
+        { label: "Chi Siamo", active: true },
+      ]}
+    />
 
     {/* ── CHI SONO ──────────────────────────────────── */}
     <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: "#fff" }}>
