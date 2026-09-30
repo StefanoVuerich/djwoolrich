@@ -18,14 +18,27 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
         with:
-          node-version: 20
-          cache: npm
-      - run: npm ci
-      - run: npx gatsby build --prefix-paths
-      - uses: actions/upload-pages-artifact@v3
+          node-version: 24
+
+      - name: Installa dipendenze
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Build Gatsby
+        run: npx gatsby build --prefix-paths
+
+      - name: Carica artifact
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./public
 
@@ -36,5 +49,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - id: deployment
+      - name: Deploy su GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
