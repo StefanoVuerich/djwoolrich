@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import Breadcrumb from "../components/Breadcrumb"
+import { onde } from "../images/illustrazioni"
 import {
   Box,
   Container,
@@ -419,7 +420,15 @@ const IndexPage = () => {
     </Box>
 
     {/* ── CITAZIONE ─────────────────────────────────── */}
-    <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: "#1a1a1a" }}>
+    <Box
+      sx={{
+        py: { xs: 8, md: 12 },
+        backgroundColor: "#1a1a1a",
+        backgroundImage: `url(${onde})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <Container maxWidth="md" sx={{ textAlign: "center" }}>
         <Typography
           variant="h4"

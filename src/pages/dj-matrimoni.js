@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import Breadcrumb from "../components/Breadcrumb"
+import { consoleDj, mappa } from "../images/illustrazioni"
 import {
   Box,
   Container,
@@ -415,23 +416,20 @@ const DjMatrimoniPage = () => {
     <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: "#f5f5f5" }}>
       <Container maxWidth="lg">
         <Grid container spacing={6} alignItems="center">
-          {/* Placeholder immagine */}
+          {/* Illustrazione console DJ */}
           <Grid item size={{ xs: 12, md: 5 }}>
             <Box
+              component="img"
+              src={consoleDj}
+              alt="Console DJ professionale"
+              loading="lazy"
               sx={{
                 width: "100%",
                 aspectRatio: "1/1",
-                backgroundColor: "#e0e0e0",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+                display: "block",
                 border: "1px solid #e8e8e8",
               }}
-            >
-              <Typography sx={{ color: "#aaa", fontSize: "0.875rem" }}>
-                Foto working
-              </Typography>
-            </Box>
+            />
           </Grid>
 
           <Grid item size={{ xs: 12, md: 7 }}>
@@ -507,6 +505,13 @@ const DjMatrimoniPage = () => {
     {/* ── ZONA DI LAVORO ────────────────────────────– */}
     <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: "#fff" }}>
       <Container maxWidth="md" sx={{ textAlign: "center" }}>
+        <Box
+          component="img"
+          src={mappa}
+          alt="Mappa della zona di lavoro: Nord-Est Italia"
+          loading="lazy"
+          sx={{ width: "100%", display: "block", border: "1px solid #e8e8e8", mb: 6 }}
+        />
         <Typography
           variant="overline"
           sx={{

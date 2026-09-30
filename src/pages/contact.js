@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import ContactForm from "../components/ContactForm"
 import Breadcrumb from "../components/Breadcrumb"
+import { contatti } from "../images/illustrazioni"
 import {
   Box,
   Container,
@@ -358,6 +359,13 @@ const ContactPage = () => {
       {/* ── FAQ RAPIDO ────────────────────────────────── */}
       <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: "#fff" }}>
         <Container maxWidth="md">
+          <Box
+            component="img"
+            src={contatti}
+            alt="Contattami via telefono, messaggi e email"
+            loading="lazy"
+            sx={{ display: "block", width: "100%", maxWidth: 420, mx: "auto", mb: 6 }}
+          />
           <Typography
             variant="h2"
             sx={{

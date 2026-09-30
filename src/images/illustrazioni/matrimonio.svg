@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="Anelli nuziali"><rect width="600" height="400" fill="#1a1a1a"/><circle cx="300" cy="200" r="170" fill="#242424"/>
+<circle cx="255" cy="215" r="80" fill="none" stroke="#f5f5f5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="345" cy="215" r="80" fill="none" stroke="#c9a86a" stroke-width="4"/>
+<path d="M300 118 l14 -28 l14 28 l-14 12 z" fill="#c9a86a"/>
+<path d="M120 90 v30 M105 105 h30 M480 70 v24 M468 82 h24 M500 300 v20 M490 310 h20" stroke="#c9a86a" stroke-width="3" stroke-linecap="round"/>
+<path d="M60 340 q60 -30 120 0 t120 0 t120 0 t120 0" fill="none" stroke="#f5f5f5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity=".35"/></svg>

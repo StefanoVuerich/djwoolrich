@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="Skyline aziendale"><rect width="600" height="400" fill="#1a1a1a"/><circle cx="300" cy="200" r="170" fill="#242424"/>
+<path d="M90 330 V200 h70 V330 M160 330 V130 h90 V330 M250 330 V220 h60 V330 M310 330 V100 h100 V330 M410 330 V190 h80 V330 M40 330 h520" fill="none" stroke="#f5f5f5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M180 160 h50 M180 200 h50 M180 240 h50 M335 130 h50 M335 170 h50 M335 210 h50 M335 250 h50" stroke="#c9a86a" stroke-width="4" stroke-linecap="round"/>
+<path d="M120 80 v-20 M135 90 v-40 M150 80 v-30 M450 80 v-30 M465 90 v-50 M480 80 v-20" stroke="#f5f5f5" stroke-width="6" stroke-linecap="round" opacity=".6"/></svg>

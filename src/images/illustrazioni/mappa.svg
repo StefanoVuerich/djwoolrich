@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" role="img" aria-label="Mappa Nord-Est Italia">
+<rect width="800" height="300" fill="#f5f5f5"/>
+<g fill="none" stroke="#1a1a1a" stroke-width="2" opacity=".18"><path d="M0 220 q100 -60 200 -10 t200 -20 t200 20 t200 -30"/><path d="M0 90 q120 40 240 0 t240 10 t320 -20"/><path d="M150 0 v300 M330 0 v300 M510 0 v300 M690 0 v300"/><path d="M0 60 h800 M0 150 h800 M0 240 h800"/></g>
+<circle cx="400" cy="126" r="70" fill="none" stroke="#c9a86a" stroke-width="2" opacity=".5"/><circle cx="400" cy="126" r="110" fill="none" stroke="#c9a86a" stroke-width="2" opacity=".25"/>
+<g transform="translate(400 150)"><ellipse cx="0" cy="62" rx="26" ry="8" fill="#1a1a1a" opacity=".2"/><path d="M0 60 c-34 -46 -40 -62 -40 -84 a40 40 0 0 1 80 0 c0 22 -6 38 -40 84z" fill="#1a1a1a"/><circle cx="0" cy="-24" r="15" fill="#c9a86a"/></g>
+</svg>

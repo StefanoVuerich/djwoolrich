@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import Breadcrumb from "../components/Breadcrumb"
+import { immaginiServizi } from "../images/illustrazioni"
 import {
   Box,
   Container,
@@ -276,7 +277,8 @@ const ServicesPage = () => {
                 <Card
                   sx={{
                     backgroundColor: "#f9f9f9",
-                    p: { xs: 4, md: 5 },
+                    "--card-pad": { xs: "32px", md: "40px" },
+                    p: "var(--card-pad)",
                     height: "100%",
                     display: "flex",
                     flexDirection: "column",
@@ -289,6 +291,22 @@ const ServicesPage = () => {
                     },
                   }}
                 >
+                  <Box
+                    component="img"
+                    src={immaginiServizi[service.titolo]}
+                    alt={service.titolo}
+                    loading="lazy"
+                    sx={{
+                      width: "calc(100% + 2 * var(--card-pad))",
+                      mx: "calc(-1 * var(--card-pad))",
+                      mt: "calc(-1 * var(--card-pad))",
+                      mb: 4,
+                      aspectRatio: "3 / 2",
+                      objectFit: "cover",
+                      display: "block",
+                      maxWidth: "none",
+                    }}
+                  />
                   <Typography
                     variant="h4"
                     sx={{

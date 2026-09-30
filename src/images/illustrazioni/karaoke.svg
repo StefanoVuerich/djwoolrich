@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="Microfono karaoke"><rect width="600" height="400" fill="#1a1a1a"/><circle cx="300" cy="200" r="170" fill="#242424"/>
+<rect x="255" y="90" width="90" height="130" rx="45" fill="none" stroke="#f5f5f5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M255 130 h90 M255 160 h90 M255 190 h90" stroke="#f5f5f5" stroke-width="2.5" opacity=".6"/>
+<path d="M225 190 q0 90 75 90 q75 0 75 -90 M300 280 v50 M250 335 h100" fill="none" stroke="#f5f5f5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M120 250 v-70 l45 -12 v70 M120 250 a16 12 0 1 1 -1 0 M165 238 a16 12 0 1 1 -1 0" stroke="#c9a86a" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M440 150 v-60 l38 -10 v60 M440 150 a14 10 0 1 1 -1 0 M478 140 a14 10 0 1 1 -1 0" stroke="#c9a86a" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M410 260 q30 -25 60 0 M400 285 q40 -40 80 0" stroke="#f5f5f5" stroke-width="3" fill="none" opacity=".4"/></svg>

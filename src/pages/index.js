@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
+import { immaginiServizi } from "../images/illustrazioni"
 import {
   Box,
   Container,
@@ -259,7 +260,6 @@ const IndexPage = () => {
               <Box
                 sx={{
                   backgroundColor: "#fff",
-                  p: 4,
                   height: "100%",
                   display: "flex",
                   flexDirection: "column",
@@ -272,6 +272,14 @@ const IndexPage = () => {
                   },
                 }}
               >
+                <Box
+                  component="img"
+                  src={immaginiServizi[service.titolo]}
+                  alt={service.titolo}
+                  loading="lazy"
+                  sx={{ width: "100%", aspectRatio: "3 / 2", objectFit: "cover", display: "block" }}
+                />
+                <Box sx={{ p: 4, display: "flex", flexDirection: "column", flexGrow: 1 }}>
                 <Typography
                   variant="h6"
                   sx={{
@@ -293,6 +301,7 @@ const IndexPage = () => {
                 >
                   {service.sottotitolo}
                 </Typography>
+                </Box>
               </Box>
             </Grid>
           ))}
