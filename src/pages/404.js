@@ -1,5 +1,6 @@
 import { Link } from "gatsby"
 import Layout from "../components/Layout"
+import Seo from "../components/Seo"
 
 const pageStyles = {
   color: "#232129",
@@ -27,19 +28,19 @@ const NotFoundPage = () => {
   return (
     <Layout>
       <main style={pageStyles}>
-        <h1 style={headingStyles}>Page not found</h1>
+        <h1 style={headingStyles}>Pagina non trovata</h1>
         <p style={paragraphStyles}>
-          Sorry 😔, we couldn’t find what you were looking for.
+          Ci dispiace 😔, non abbiamo trovato la pagina che cercavi.
           <br />
           {process.env.NODE_ENV === "development" ? (
             <>
               <br />
-              Try creating a page in <code style={codeStyles}>src/pages/</code>.
+              Prova a creare una pagina in <code style={codeStyles}>src/pages/</code>.
               <br />
             </>
           ) : null}
           <br />
-          <Link to="/">Go home</Link>.
+          <Link to="/">Torna alla home</Link>.
         </p>
         </main>
     </Layout>
@@ -48,4 +49,10 @@ const NotFoundPage = () => {
 
 export default NotFoundPage
 
-export const Head = () => <title>Not found</title>
+export const Head = () => (
+  <Seo
+    title={"Pagina non trovata — DJ Woolrich"}
+    path="/404/"
+    noindex
+  />
+)

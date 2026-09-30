@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { Link as GatsbyLink } from "gatsby"
 import { Box, Container, Typography, Button, Checkbox, FormControlLabel } from "@mui/material"
 import { useCookieContext } from "../contexts/CookieContext"
 
@@ -101,7 +102,8 @@ const CookieBanner = ({ onConsent }) => {
                 (Google Analytics) e preferenze per migliorare la tua esperienza sul sito.{" "}
                 <Typography
                   component="a"
-                  href="/cookie"
+                  component={GatsbyLink}
+                  to="/cookie/"
                   sx={{
                     color: "#fff",
                     fontWeight: 600,

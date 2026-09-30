@@ -7,6 +7,7 @@ import {
   Container,
   Typography,
 } from "@mui/material"
+import Seo from "../components/Seo"
 
 const CookiePage = () => (
   <Layout>
@@ -408,4 +409,10 @@ const CookiePage = () => (
 
 export default CookiePage
 
-export const Head = () => <title>{`Cookie Policy — ${siteConfig.name}`}</title>
+export const Head = () => (
+  <Seo
+    title={`Cookie Policy — ${siteConfig.name}`}
+    path="/cookie/"
+    noindex
+  />
+)

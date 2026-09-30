@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { Link as GatsbyLink } from "gatsby"
 import { useForm, Controller } from "react-hook-form"
 import emailjs from "@emailjs/browser"
 import {
@@ -387,7 +388,8 @@ const ContactForm = () => {
                       <Typography variant="body2" sx={{ color: "#666", fontSize: "0.875rem" }}>
                         Accetto i{" "}
                         <Link
-                          href="/terms"
+                          component={GatsbyLink}
+                          to="/terms/"
                           target="_blank"
                           rel="noopener noreferrer"
                           sx={{

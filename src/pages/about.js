@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link as GatsbyLink } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import Breadcrumb from "../components/Breadcrumb"
@@ -13,6 +13,7 @@ import {
   Grid,
   Divider,
 } from "@mui/material"
+import Seo, { localBusinessSchema, breadcrumbSchema } from "../components/Seo"
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -120,7 +121,8 @@ const IndexPage = () => {
             </Typography>
             <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
               <Button
-                href="/contact"
+                component={GatsbyLink}
+                to="/contact/"
                 disableElevation
                 sx={{
                   backgroundColor: "#fff",
@@ -139,7 +141,8 @@ const IndexPage = () => {
                 Contattami
               </Button>
               <Button
-                href="/services"
+                component={GatsbyLink}
+                to="/services/"
                 disableElevation
                 sx={{
                   backgroundColor: "transparent",
@@ -490,7 +493,8 @@ const IndexPage = () => {
           colonna sonora del vostro momento speciale.
         </Typography>
         <Button
-          href="/contact"
+          component={GatsbyLink}
+          to="/contact/"
           disableElevation
           sx={{
             backgroundColor: "#1a1a1a",
@@ -517,4 +521,11 @@ const IndexPage = () => {
 
 export default IndexPage
 
-export const Head = () => <title>{`Chi sono — ${siteConfig.name}`}</title>
+export const Head = () => (
+  <Seo
+    title={`Chi sono — ${siteConfig.name}, DJ a Pordenone`}
+    description={"Scopri chi è DJ Woolrich: passione, esperienza e metodo di lavoro di un DJ professionista a Pordenone per matrimoni ed eventi nel Nord-Est."}
+    path="/about/"
+    schemas={[breadcrumbSchema([{ nome: "Home", path: "/" }, { nome: "Chi sono", path: "/about/" }])]}
+  />
+)

@@ -1,6 +1,18 @@
 {
   "name": "DJ Woolrich",
   "domain": "www.djwoolrich.it",
-  "siteUrl": "https://www.djwoolrich.it",
-  "email": "info@djwoolrich.it"
+  "siteUrl": "https://stefanovuerich.github.io",
+  "pathPrefix": "/djwoolrich",
+  "email": "info@djwoolrich.it",
+  "telefono": "+393298883327",
+  "telefonoVisualizzato": "+39 329 888 3327",
+  "whatsapp": "393298883327",
+  "descrizione": "DJ professionista a Pordenone per matrimoni, feste private ed eventi aziendali in Friuli Venezia Giulia e Veneto. Musica, impianto audio e luci su misura.",
+  "immagineOg": "/og-image.jpg",
+  "zonaServita": ["Pordenone", "Friuli Venezia Giulia", "Veneto"],
+  "social": {
+    "instagram": "",
+    "facebook": "",
+    "youtube": ""
+  }
 }

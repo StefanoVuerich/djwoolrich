@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link as GatsbyLink } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import Breadcrumb from "../components/Breadcrumb"
@@ -13,6 +13,7 @@ import {
   Grid,
   Divider,
 } from "@mui/material"
+import Seo, { localBusinessSchema, breadcrumbSchema } from "../components/Seo"
 
 // Dati servizi matrimoniali
 const serviziMatrimoniali = [
@@ -170,7 +171,8 @@ const DjMatrimoniPage = () => {
               </Typography>
               <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
                 <Button
-                  href="/contact"
+                  component={GatsbyLink}
+                  to="/contact/"
                   disableElevation
                   sx={{
                     backgroundColor: "#fff",
@@ -189,7 +191,8 @@ const DjMatrimoniPage = () => {
                   Iniziamo a parlarne
                 </Button>
                 <Button
-                  href="/about"
+                  component={GatsbyLink}
+                  to="/about/"
                   disableElevation
                   sx={{
                     backgroundColor: "transparent",
@@ -567,7 +570,8 @@ const DjMatrimoniPage = () => {
             Hai una data in mente? Ti consiglio di contattarmi almeno 3-6 mesi prima per assicurarti la disponibilità e per avere tempo di conoscerci bene.
           </Typography>
           <Button
-            href="/contact"
+            component={GatsbyLink}
+            to="/contact/"
             disableElevation
             sx={{
               backgroundColor: "#1a1a1a",
@@ -616,7 +620,8 @@ const DjMatrimoniPage = () => {
           Raccontami della vostra storia, della vostra visione, dei vostri desideri musicali. Sarò felice di ascoltare e di costruire insieme a voi la colonna sonora del vostro giorno speciale.
         </Typography>
         <Button
-          href="/contact"
+          component={GatsbyLink}
+          to="/contact/"
           disableElevation
           sx={{
             backgroundColor: "#fff",
@@ -643,4 +648,11 @@ const DjMatrimoniPage = () => {
 
 export default DjMatrimoniPage
 
-export const Head = () => <title>{`DJ Matrimonio — ${siteConfig.name}`}</title>
+export const Head = () => (
+  <Seo
+    title={`DJ Matrimonio a Pordenone — ${siteConfig.name}`}
+    description={"DJ per matrimoni a Pordenone, Friuli e Veneto: musica per cerimonia, aperitivo e ricevimento, consulenza con gli sposi, impianto audio e luci professionali."}
+    path="/dj-matrimoni/"
+    schemas={[breadcrumbSchema([{ nome: "Home", path: "/" }, { nome: "DJ Matrimonio", path: "/dj-matrimoni/" }])]}
+  />
+)

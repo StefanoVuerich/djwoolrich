@@ -7,6 +7,7 @@ import {
   Container,
   Typography,
 } from "@mui/material"
+import Seo from "../components/Seo"
 
 const PrivacyPage = () => (
   <Layout>
@@ -377,4 +378,10 @@ const PrivacyPage = () => (
 
 export default PrivacyPage
 
-export const Head = () => <title>{`Privacy Policy — ${siteConfig.name}`}</title>
+export const Head = () => (
+  <Seo
+    title={`Privacy Policy — ${siteConfig.name}`}
+    path="/privacy/"
+    noindex
+  />
+)

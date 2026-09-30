@@ -1,4 +1,5 @@
 import React from "react"
+import { Link as GatsbyLink } from "gatsby"
 import Layout from "../components/Layout"
 import Breadcrumb from "../components/Breadcrumb"
 import siteConfig from "../siteconfig.json"
@@ -7,6 +8,7 @@ import {
   Container,
   Typography,
 } from "@mui/material"
+import Seo from "../components/Seo"
 
 const TermsPage = () => (
   <Layout>
@@ -248,7 +250,8 @@ const TermsPage = () => (
           richiesti. Consulta la nostra{" "}
           <Typography
             component="a"
-            href="/privacy"
+            component={GatsbyLink}
+            to="/privacy/"
             sx={{
               color: "#1a1a1a",
               fontWeight: 600,
@@ -286,7 +289,8 @@ const TermsPage = () => (
           per elaborare l'invio della email. Consulta la{" "}
           <Typography
             component="a"
-            href="/privacy"
+            component={GatsbyLink}
+            to="/privacy/"
             sx={{
               color: "#1a1a1a",
               fontWeight: 600,
@@ -406,7 +410,7 @@ const TermsPage = () => (
           </Typography>
           <Typography
             component="a"
-            href="https://wa.me/393298883327"
+            href={`https://wa.me/${siteConfig.whatsapp}`}
             target="_blank"
             rel="noopener noreferrer"
             sx={{
@@ -415,7 +419,7 @@ const TermsPage = () => (
               "&:hover": { textDecoration: "underline" },
             }}
           >
-            +39 329 888 3327
+            {siteConfig.telefonoVisualizzato}
           </Typography>
         </Box>
 
@@ -439,4 +443,10 @@ const TermsPage = () => (
 
 export default TermsPage
 
-export const Head = () => <title>{`Termini e Condizioni — ${siteConfig.name}`}</title>
+export const Head = () => (
+  <Seo
+    title={`Termini e Condizioni — ${siteConfig.name}`}
+    path="/terms/"
+    noindex
+  />
+)

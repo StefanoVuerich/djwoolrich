@@ -17,6 +17,7 @@ import EmailIcon from "@mui/icons-material/Email"
 import PhoneIcon from "@mui/icons-material/Phone"
 import LocationOnIcon from "@mui/icons-material/LocationOn"
 import siteConfig from "../siteconfig.json"
+import Seo, { localBusinessSchema, breadcrumbSchema } from "../components/Seo"
 
 const ContactPage = () => {
   const data = useStaticQuery(graphql`
@@ -173,7 +174,7 @@ const ContactPage = () => {
                     Il modo più veloce per contattarmi. Disponibile su appuntamento.
                   </Typography>
                   <Link
-                    href="https://wa.me/393298883327"
+                    href={`https://wa.me/${siteConfig.whatsapp}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     sx={{
@@ -184,7 +185,7 @@ const ContactPage = () => {
                       "&:hover": { textDecoration: "underline" },
                     }}
                   >
-                    +39 329 888 3327 →
+                    {siteConfig.telefonoVisualizzato} →
                   </Link>
                 </Box>
               </Box>
@@ -289,7 +290,7 @@ const ContactPage = () => {
                     Per conversazioni più approfondite, sono disponibile su appuntamento.
                   </Typography>
                   <Link
-                    href="tel:+393298883327"
+                    href={`tel:${siteConfig.telefono}`}
                     sx={{
                       fontSize: "0.875rem",
                       fontWeight: 600,
@@ -298,7 +299,7 @@ const ContactPage = () => {
                       "&:hover": { textDecoration: "underline" },
                     }}
                   >
-                    +39 329 888 3327 →
+                    {siteConfig.telefonoVisualizzato} →
                   </Link>
                 </Box>
               </Box>
@@ -428,4 +429,11 @@ const ContactPage = () => {
 
 export default ContactPage
 
-export const Head = () => <title>{`Contatti — ${siteConfig.name}`}</title>
+export const Head = () => (
+  <Seo
+    title={`Contatti — ${siteConfig.name} | Preventivo DJ a Pordenone`}
+    description={"Richiedi un preventivo gratuito per il tuo matrimonio o evento. Contatta DJ Woolrich via telefono, WhatsApp, email o con il modulo online."}
+    path="/contact/"
+    schemas={[localBusinessSchema, breadcrumbSchema([{ nome: "Home", path: "/" }, { nome: "Contatti", path: "/contact/" }])]}
+  />
+)

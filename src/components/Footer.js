@@ -1,4 +1,5 @@
 import React from "react"
+import { Link as GatsbyLink } from "gatsby"
 import { Box, Container, Typography, Grid, Link } from "@mui/material"
 import FacebookIcon from "@mui/icons-material/Facebook"
 import InstagramIcon from "@mui/icons-material/Instagram"
@@ -8,23 +9,24 @@ import { useCookieContext } from "../contexts/CookieContext"
 import siteConfig from "../siteconfig.json"
 
 const navLinks = [
-  { label: "Chi Siamo", href: "/about" },
+  { label: "Chi Siamo", href: "/about/" },
   { label: "DJ Matrimoni", href: "/dj-matrimoni/" },
-  { label: "Servizi", href: "/services" },
-  { label: "Contatti", href: "/contact" },
+  { label: "Servizi", href: "/services/" },
+  { label: "Contatti", href: "/contact/" },
 ]
 
 const legalLinks = [
-  { label: "Termini e Condizioni", href: "/terms" },
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Cookie Policy", href: "/cookie" },
+  { label: "Termini e Condizioni", href: "/terms/" },
+  { label: "Privacy Policy", href: "/privacy/" },
+  { label: "Cookie Policy", href: "/cookie/" },
 ]
 
+// Mostra solo i social con un URL configurato in siteconfig.json
 const socialLinks = [
-  { icon: <InstagramIcon fontSize="small" />, href: "https://instagram.com", label: "Instagram" },
-  { icon: <FacebookIcon fontSize="small" />, href: "https://facebook.com", label: "Facebook" },
-  { icon: <YouTubeIcon fontSize="small" />, href: "https://youtube.com", label: "YouTube" },
-]
+  { icon: <InstagramIcon fontSize="small" />, href: siteConfig.social.instagram, label: "Instagram" },
+  { icon: <FacebookIcon fontSize="small" />, href: siteConfig.social.facebook, label: "Facebook" },
+  { icon: <YouTubeIcon fontSize="small" />, href: siteConfig.social.youtube, label: "YouTube" },
+].filter((s) => s.href)
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -110,7 +112,8 @@ const Footer = () => {
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
-                  href={link.href}
+                  component={GatsbyLink}
+                  to={link.href}
                   sx={{
                     fontSize: "0.875rem",
                     color: "#666",
@@ -154,7 +157,7 @@ const Footer = () => {
                 {siteConfig.email}
               </Link>
               <Link
-                href="https://wa.me/1234567890"
+                href={`https://wa.me/${siteConfig.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{
@@ -190,7 +193,8 @@ const Footer = () => {
             {legalLinks.map((link) => (
               <Link
                 key={link.href}
-                href={link.href}
+                component={GatsbyLink}
+                to={link.href}
                 sx={{
                   fontSize: "0.8rem",
                   color: "#999",

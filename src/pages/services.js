@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link as GatsbyLink } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import Breadcrumb from "../components/Breadcrumb"
@@ -13,6 +13,7 @@ import {
   Grid,
   Card,
 } from "@mui/material"
+import Seo, { localBusinessSchema, breadcrumbSchema } from "../components/Seo"
 
 const servicesData = [
   {
@@ -389,7 +390,8 @@ const ServicesPage = () => {
                   </Box>
 
                   <Button
-                    href="/contact"
+                    component={GatsbyLink}
+                    to="/contact/"
                     disableElevation
                     sx={{
                       alignSelf: "flex-start",
@@ -534,7 +536,8 @@ const ServicesPage = () => {
             Contattatemi senza impegno per discutere dei vostri servizi necessari. Vi fornirò una consulenza gratuita e un preventivo personalizzato.
           </Typography>
           <Button
-            href="/contact"
+            component={GatsbyLink}
+            to="/contact/"
             disableElevation
             sx={{
               backgroundColor: "#fff",
@@ -561,7 +564,10 @@ const ServicesPage = () => {
 export default ServicesPage
 
 export const Head = () => (
-  <title>
-    Servizi DJ Professionali a Pordenone | Matrimoni, Feste e Corporate Events
-  </title>
+  <Seo
+    title={"Servizi DJ a Pordenone | Matrimoni, Feste, Eventi Aziendali"}
+    description={"Servizi DJ professionali a Pordenone: matrimoni, feste private ed eventi aziendali in Friuli Venezia Giulia e Veneto. Scopri cosa include ogni servizio."}
+    path="/services/"
+    schemas={[breadcrumbSchema([{ nome: "Home", path: "/" }, { nome: "Servizi", path: "/services/" }])]}
+  />
 )

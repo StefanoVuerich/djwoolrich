@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link as GatsbyLink } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import { immaginiServizi } from "../images/illustrazioni"
@@ -11,6 +11,7 @@ import {
   Button,
   Grid,
 } from "@mui/material"
+import Seo, { localBusinessSchema, breadcrumbSchema } from "../components/Seo"
 
 // Tutti i servizi
 const allServices = [
@@ -152,7 +153,8 @@ const IndexPage = () => {
             </Typography>
             <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
               <Button
-                href="/contact"
+                component={GatsbyLink}
+                to="/contact/"
                 disableElevation
                 sx={{
                   backgroundColor: "#1a1a1a",
@@ -171,7 +173,8 @@ const IndexPage = () => {
                 Verifica disponibilità
               </Button>
               <Button
-                href="/services"
+                component={GatsbyLink}
+                to="/services/"
                 disableElevation
                 sx={{
                   backgroundColor: "transparent",
@@ -310,7 +313,8 @@ const IndexPage = () => {
 
         <Box sx={{ textAlign: "center" }}>
           <Button
-            href="/services"
+            component={GatsbyLink}
+            to="/services/"
             disableElevation
             sx={{
               backgroundColor: "#1a1a1a",
@@ -391,7 +395,8 @@ const IndexPage = () => {
               per un giorno che non dimenticherete.
             </Typography>
             <Button
-              href="/about"
+              component={GatsbyLink}
+              to="/about/"
               disableElevation
               sx={{
                 backgroundColor: "transparent",
@@ -443,7 +448,8 @@ const IndexPage = () => {
           personalizzato senza impegno.
         </Typography>
         <Button
-          href="/contact"
+          component={GatsbyLink}
+          to="/contact/"
           disableElevation
           sx={{
             backgroundColor: "#fff",
@@ -470,4 +476,11 @@ const IndexPage = () => {
 
 export default IndexPage
 
-export const Head = () => <title>{`${siteConfig.name} — Musica per i tuoi momenti speciali`}</title>
+export const Head = () => (
+  <Seo
+    title={`${siteConfig.name} — DJ a Pordenone per Matrimoni, Feste ed Eventi`}
+    description={"DJ professionista a Pordenone per matrimoni, feste private ed eventi aziendali in Friuli Venezia Giulia e Veneto. Musica, impianto audio e luci su misura."}
+    path="/"
+    schemas={[localBusinessSchema]}
+  />
+)
