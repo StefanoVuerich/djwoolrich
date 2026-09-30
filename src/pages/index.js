@@ -154,7 +154,7 @@ const IndexPage = () => {
             <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
               <Button
                 component={GatsbyLink}
-                to="/contact/"
+                to="/contact/#form-contatti"
                 disableElevation
                 sx={{
                   backgroundColor: "#1a1a1a",
@@ -452,7 +452,7 @@ const IndexPage = () => {
         </Typography>
         <Button
           component={GatsbyLink}
-          to="/contact/"
+          to="/contact/#form-contatti"
           disableElevation
           sx={{
             backgroundColor: "#fff",

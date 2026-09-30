@@ -416,7 +416,7 @@ const ServicesPage = () => {
 
                   <Button
                     component={GatsbyLink}
-                    to="/contact/"
+                    to="/contact/#form-contatti"
                     disableElevation
                     sx={{
                       alignSelf: "flex-start",
@@ -566,7 +566,7 @@ const ServicesPage = () => {
           </Typography>
           <Button
             component={GatsbyLink}
-            to="/contact/"
+            to="/contact/#form-contatti"
             disableElevation
             sx={{
               backgroundColor: "#fff",

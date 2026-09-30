@@ -88,7 +88,7 @@ const ContactForm = () => {
   }
 
   return (
-    <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: "#f5f5f5" }}>
+    <Box id="form-contatti" sx={{ py: { xs: 8, md: 12 }, backgroundColor: "#f5f5f5", scrollMarginTop: 64 }}>
       <Container maxWidth="md">
         <Typography
           variant="overline"
