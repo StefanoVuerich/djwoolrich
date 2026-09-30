@@ -205,6 +205,7 @@ const IndexPage = () => {
       <Container maxWidth="md" sx={{ textAlign: "center" }}>
         <Typography
           variant="h4"
+          component="p"
           sx={{
             fontSize: { xs: "1.5rem", md: "2rem" },
             fontWeight: 300,
@@ -286,6 +287,7 @@ const IndexPage = () => {
                 <Box sx={{ p: 4, display: "flex", flexDirection: "column", flexGrow: 1 }}>
                 <Typography
                   variant="h6"
+                  component="h3"
                   sx={{
                     fontWeight: 700,
                     color: "#1a1a1a",
@@ -431,6 +433,7 @@ const IndexPage = () => {
       <Container maxWidth="sm">
         <Typography
           variant="h3"
+          component="h2"
           sx={{
             fontSize: { xs: "1.75rem", md: "2.25rem" },
             fontWeight: 700,

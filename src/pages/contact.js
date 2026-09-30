@@ -166,6 +166,7 @@ const ContactPage = () => {
                 <Box>
                   <Typography
                     variant="h6"
+                    component="h2"
                     sx={{ fontWeight: 700, color: "#1a1a1a", mb: 1 }}
                   >
                     WhatsApp
@@ -225,6 +226,7 @@ const ContactPage = () => {
                 <Box>
                   <Typography
                     variant="h6"
+                    component="h2"
                     sx={{ fontWeight: 700, color: "#1a1a1a", mb: 1 }}
                   >
                     Email
@@ -282,6 +284,7 @@ const ContactPage = () => {
                 <Box>
                   <Typography
                     variant="h6"
+                    component="h2"
                     sx={{ fontWeight: 700, color: "#1a1a1a", mb: 1 }}
                   >
                     Telefono
@@ -339,6 +342,7 @@ const ContactPage = () => {
                 <Box>
                   <Typography
                     variant="h6"
+                    component="h2"
                     sx={{ fontWeight: 700, color: "#1a1a1a", mb: 1 }}
                   >
                     Zona di lavoro
@@ -409,6 +413,7 @@ const ContactPage = () => {
                 >
                   <Typography
                     variant="h6"
+                    component="h3"
                     sx={{ fontWeight: 700, color: "#1a1a1a", mb: 1 }}
                   >
                     {faq.domanda}

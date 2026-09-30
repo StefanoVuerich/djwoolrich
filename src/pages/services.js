@@ -13,7 +13,31 @@ import {
   Grid,
   Card,
 } from "@mui/material"
+import Faq, { faqSchema } from "../components/Faq"
 import Seo, { localBusinessSchema, breadcrumbSchema } from "../components/Seo"
+
+const faqServizi = [
+  {
+    domanda: "Quali servizi offri come DJ a Pordenone?",
+    risposta:
+      "Offro servizi DJ per matrimoni, feste private (compleanni, anniversari, lauree) ed eventi aziendali, con impianto audio e luci professionali inclusi.",
+  },
+  {
+    domanda: "In quali zone lavori?",
+    risposta:
+      "Mi sposto a Pordenone e provincia, in tutto il Friuli Venezia Giulia e in Veneto. Per eventi più distanti contattami per valutare la disponibilità.",
+  },
+  {
+    domanda: "Come si richiede un preventivo?",
+    risposta:
+      "Puoi scrivermi dal modulo contatti, su WhatsApp o per telefono: ti rispondo con un preventivo gratuito e personalizzato in base a data, luogo e tipo di evento.",
+  },
+  {
+    domanda: "L'impianto audio e le luci sono inclusi?",
+    risposta:
+      "Sì, porto un impianto audio e un set luci professionali adatti alla dimensione dell'evento, con backup tecnico.",
+  },
+]
 
 const servicesData = [
   {
@@ -311,6 +335,7 @@ const ServicesPage = () => {
                   />
                   <Typography
                     variant="h4"
+                    component="h3"
                     sx={{
                       fontWeight: 700,
                       color: "#1a1a1a",
@@ -481,6 +506,7 @@ const ServicesPage = () => {
                 >
                   <Typography
                     variant="h6"
+                    component="h3"
                     sx={{
                       fontWeight: 700,
                       color: "#1a1a1a",
@@ -505,6 +531,8 @@ const ServicesPage = () => {
         </Container>
       </Box>
 
+      <Faq voci={faqServizi} />
+
       {/* ── CTA FINALE ────────────────────────────────– */}
       <Box
         sx={{
@@ -516,6 +544,7 @@ const ServicesPage = () => {
         <Container maxWidth="sm">
           <Typography
             variant="h3"
+            component="h2"
             sx={{
               fontSize: { xs: "1.75rem", md: "2.25rem" },
               fontWeight: 700,
@@ -568,6 +597,6 @@ export const Head = () => (
     title={"Servizi DJ a Pordenone | Matrimoni, Feste, Eventi Aziendali"}
     description={"Servizi DJ professionali a Pordenone: matrimoni, feste private ed eventi aziendali in Friuli Venezia Giulia e Veneto. Scopri cosa include ogni servizio."}
     path="/services/"
-    schemas={[breadcrumbSchema([{ nome: "Home", path: "/" }, { nome: "Servizi", path: "/services/" }])]}
+    schemas={[faqSchema(faqServizi), breadcrumbSchema([{ nome: "Home", path: "/" }, { nome: "Servizi", path: "/services/" }])]}
   />
 )

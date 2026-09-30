@@ -13,9 +13,33 @@ import {
   Grid,
   Divider,
 } from "@mui/material"
+import Faq, { faqSchema } from "../components/Faq"
 import Seo, { localBusinessSchema, breadcrumbSchema } from "../components/Seo"
 
 // Dati servizi matrimoniali
+const faqMatrimonio = [
+  {
+    domanda: "Quanto costa un DJ per matrimonio a Pordenone?",
+    risposta:
+      "Il costo dipende da durata, location e servizi scelti (cerimonia, aperitivo, ricevimento, luci). Richiedi un preventivo gratuito indicando data e luogo.",
+  },
+  {
+    domanda: "Con quanto anticipo devo prenotare?",
+    risposta:
+      "Consiglio di contattarmi il prima possibile, idealmente 6-12 mesi prima, perché le date più richieste si riempiono in fretta.",
+  },
+  {
+    domanda: "Posso scegliere la musica per il nostro matrimonio?",
+    risposta:
+      "Certo: prima del matrimonio facciamo una consulenza per definire i vostri brani preferiti, il primo ballo e quelli da evitare.",
+  },
+  {
+    domanda: "Ti occupi anche della musica per la cerimonia?",
+    risposta:
+      "Sì, posso curare la musica per cerimonia, aperitivo e ricevimento, coordinandomi con wedding planner e location.",
+  },
+]
+
 const serviziMatrimoniali = [
   {
     titolo: "Cerimonia e Cocktail",
@@ -231,6 +255,7 @@ const DjMatrimoniPage = () => {
       <Container maxWidth="md" sx={{ textAlign: "center" }}>
         <Typography
           variant="h4"
+          component="p"
           sx={{
             fontSize: { xs: "1.5rem", md: "2rem" },
             fontWeight: 300,
@@ -306,6 +331,7 @@ const DjMatrimoniPage = () => {
               >
                 <Typography
                   variant="h5"
+                  component="h3"
                   sx={{ fontWeight: 700, color: "#1a1a1a", mb: 2 }}
                 >
                   {s.titolo}
@@ -400,6 +426,7 @@ const DjMatrimoniPage = () => {
                 </Typography>
                 <Typography
                   variant="h6"
+                  component="h3"
                   sx={{ fontWeight: 700, color: "#1a1a1a", mb: 2 }}
                 >
                   {step.titolo}
@@ -560,6 +587,7 @@ const DjMatrimoniPage = () => {
         >
           <Typography
             variant="h6"
+            component="h3"
             sx={{ fontWeight: 700, color: "#1a1a1a", mb: 2 }}
           >
             Contattami per verificare la disponibilità
@@ -593,6 +621,8 @@ const DjMatrimoniPage = () => {
       </Container>
     </Box>
 
+    <Faq voci={faqMatrimonio} />
+
     {/* ── CTA FINALE ────────────────────────────────– */}
     <Box
       sx={{
@@ -604,6 +634,7 @@ const DjMatrimoniPage = () => {
       <Container maxWidth="sm">
         <Typography
           variant="h3"
+          component="h2"
           sx={{
             fontSize: { xs: "1.75rem", md: "2.25rem" },
             fontWeight: 700,
@@ -653,6 +684,6 @@ export const Head = () => (
     title={`DJ Matrimonio a Pordenone — ${siteConfig.name}`}
     description={"DJ per matrimoni a Pordenone, Friuli e Veneto: musica per cerimonia, aperitivo e ricevimento, consulenza con gli sposi, impianto audio e luci professionali."}
     path="/dj-matrimoni/"
-    schemas={[breadcrumbSchema([{ nome: "Home", path: "/" }, { nome: "DJ Matrimonio", path: "/dj-matrimoni/" }])]}
+    schemas={[faqSchema(faqMatrimonio), breadcrumbSchema([{ nome: "Home", path: "/" }, { nome: "DJ Matrimonio", path: "/dj-matrimoni/" }])]}
   />
 )

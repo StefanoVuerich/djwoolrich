@@ -299,6 +299,7 @@ const IndexPage = () => {
             >
               <Typography
                 variant="h5"
+                component="h3"
                 sx={{ fontWeight: 700, color: "#1a1a1a", mb: 2 }}
               >
                 Ascolto e Comprensione
@@ -334,6 +335,7 @@ const IndexPage = () => {
             >
               <Typography
                 variant="h5"
+                component="h3"
                 sx={{ fontWeight: 700, color: "#1a1a1a", mb: 2 }}
               >
                 Direzione Musicale
@@ -369,6 +371,7 @@ const IndexPage = () => {
             >
               <Typography
                 variant="h5"
+                component="h3"
                 sx={{ fontWeight: 700, color: "#1a1a1a", mb: 2 }}
               >
                 Composizioni Originali
@@ -404,6 +407,7 @@ const IndexPage = () => {
             >
               <Typography
                 variant="h5"
+                component="h3"
                 sx={{ fontWeight: 700, color: "#1a1a1a", mb: 2 }}
               >
                 Leggerezza e Adattamento
@@ -436,6 +440,7 @@ const IndexPage = () => {
       <Container maxWidth="md" sx={{ textAlign: "center" }}>
         <Typography
           variant="h4"
+          component="p"
           sx={{
             fontSize: { xs: "1.5rem", md: "2rem" },
             fontWeight: 300,
@@ -475,6 +480,7 @@ const IndexPage = () => {
       <Container maxWidth="sm">
         <Typography
           variant="h3"
+          component="h2"
           sx={{
             fontSize: { xs: "1.75rem", md: "2.25rem" },
             fontWeight: 700,
