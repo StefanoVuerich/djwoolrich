@@ -530,7 +530,7 @@ export default IndexPage
 export const Head = () => (
   <Seo
     title={`Chi sono — ${siteConfig.name}, DJ a Pordenone`}
-    description={"Scopri chi è DJ Woolrich: passione, esperienza e metodo di lavoro di un DJ professionista a Pordenone per matrimoni ed eventi nel Nord-Est."}
+    description={"Scopri chi è Live'n'Mix: passione, esperienza e metodo di lavoro di un DJ professionista a Pordenone per matrimoni ed eventi nel Nord-Est."}
     path="/about/"
     schemas={[breadcrumbSchema([{ nome: "Home", path: "/" }, { nome: "Chi sono", path: "/about/" }])]}
   />

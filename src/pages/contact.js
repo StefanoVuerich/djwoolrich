@@ -437,7 +437,7 @@ export default ContactPage
 export const Head = () => (
   <Seo
     title={`Contatti — ${siteConfig.name} | Preventivo DJ a Pordenone`}
-    description={"Richiedi un preventivo gratuito per il tuo matrimonio o evento. Contatta DJ Woolrich via telefono, WhatsApp, email o con il modulo online."}
+    description={"Richiedi un preventivo gratuito per il tuo matrimonio o evento. Contatta Live'n'Mix via telefono, WhatsApp, email o con il modulo online."}
     path="/contact/"
     schemas={[localBusinessSchema, breadcrumbSchema([{ nome: "Home", path: "/" }, { nome: "Contatti", path: "/contact/" }])]}
   />

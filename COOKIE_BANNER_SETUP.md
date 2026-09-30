@@ -129,7 +129,7 @@ Per testare il banner di nuovo:
 ### Google Analytics
 
 - Configura **anonimizzazione IP** nelle impostazioni di Google Analytics per GDPR compliance
-- Considera di escludere IP interni (utenti DJ Woolrich)
+- Considera di escludere IP interni (utenti Live'n'Mix)
 
 ### GDPR Compliance
 

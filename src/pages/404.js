@@ -51,7 +51,7 @@ export default NotFoundPage
 
 export const Head = () => (
   <Seo
-    title={"Pagina non trovata — DJ Woolrich"}
+    title={"Pagina non trovata — Live'n'Mix"}
     path="/404/"
     noindex
   />

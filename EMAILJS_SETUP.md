@@ -54,7 +54,7 @@ Nuovo messaggio da {{from_name}}
 <hr>
 
 <p>Saluti,<br>
-DJ Woolrich Website</p>
+Live'n'Mix Website</p>
 ```
 
 4. Clicca su **Save**
