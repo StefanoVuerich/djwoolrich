@@ -5,6 +5,7 @@ import CloseIcon from "@mui/icons-material/Close"
 import IconButton from "@mui/material/IconButton"
 import { Link as GatsbyLink } from "gatsby"
 import siteConfig from "../siteconfig.json"
+import logo from "../images/logo.svg"
 
 const menuItems = [
   { label: "Home", to: "/" },
@@ -42,6 +43,9 @@ const Navbar = () => {
             to="/"
             sx={{
               flexGrow: 1,
+              display: "flex",
+              alignItems: "center",
+              gap: 1.25,
               fontWeight: 700,
               fontSize: "1.1rem",
               letterSpacing: "0.05em",
@@ -52,6 +56,12 @@ const Navbar = () => {
               transition: "opacity 0.3s ease",
             }}
           >
+            <Box
+              component="img"
+              src={logo}
+              alt=""
+              sx={{ width: { xs: 36, md: 42 }, height: { xs: 36, md: 42 } }}
+            />
             {siteConfig.name}
           </Typography>
 
