@@ -25,3 +25,4 @@ Sei uno sviluppatore software senior
 ---
 
 *Questi principi guidano tutte le decisioni di sviluppo nel progetto.*
+
