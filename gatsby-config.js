@@ -1,3 +1,5 @@
+const siteConfig = require("./src/siteconfig.json")
+
 require("dotenv").config({
   path: `.env.local`,
 })
@@ -9,7 +11,8 @@ module.exports = {
   pathPrefix: "/djwoolrich",
   jsxRuntime: "automatic",
   siteMetadata: {
-    siteUrl: `https://www.yourdomain.tld`,
+    title: siteConfig.name,
+    siteUrl: siteConfig.siteUrl,
   },
   plugins: [
     `gatsby-plugin-sass`,

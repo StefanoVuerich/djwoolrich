@@ -5,6 +5,7 @@ import InstagramIcon from "@mui/icons-material/Instagram"
 import YouTubeIcon from "@mui/icons-material/YouTube"
 import IconButton from "@mui/material/IconButton"
 import { useCookieContext } from "../contexts/CookieContext"
+import siteConfig from "../siteconfig.json"
 
 const navLinks = [
   { label: "Chi Siamo", href: "/about" },
@@ -56,7 +57,7 @@ const Footer = () => {
                 mb: 2,
               }}
             >
-              DJ Woolrich
+              {siteConfig.name}
             </Typography>
             <Typography
               variant="body2"
@@ -141,7 +142,7 @@ const Footer = () => {
             </Typography>
             <Box sx={{ display: "flex", flexDirection: "column", gap: 1.2 }}>
               <Link
-                href="mailto:info@djwoolrich.it"
+                href={`mailto:${siteConfig.email}`}
                 sx={{
                   fontSize: "0.875rem",
                   color: "#666",
@@ -150,7 +151,7 @@ const Footer = () => {
                   transition: "color 0.3s ease",
                 }}
               >
-                info@djwoolrich.it
+                {siteConfig.email}
               </Link>
               <Link
                 href="https://wa.me/1234567890"
@@ -183,7 +184,7 @@ const Footer = () => {
           }}
         >
           <Typography variant="body2" sx={{ color: "#999", fontSize: "0.8rem" }}>
-            &copy; {currentYear} DJ Woolrich. Tutti i diritti riservati.
+            &copy; {currentYear} {siteConfig.name}. Tutti i diritti riservati.
           </Typography>
           <Box sx={{ display: "flex", gap: 3, flexWrap: "wrap" }}>
             {legalLinks.map((link) => (

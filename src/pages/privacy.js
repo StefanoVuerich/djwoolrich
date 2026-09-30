@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout"
 import Breadcrumb from "../components/Breadcrumb"
+import siteConfig from "../siteconfig.json"
 import {
   Box,
   Container,
@@ -73,7 +74,7 @@ const PrivacyPage = () => (
             variant="body2"
             sx={{ color: "#666", lineHeight: 1.9 }}
           >
-            DJ Woolrich è titolare del trattamento dei dati personali forniti attraverso il nostro sito web. Per qualsiasi domanda relativa alla privacy, potete contattarci a info@djwoolrich.it.
+            {siteConfig.name} è titolare del trattamento dei dati personali forniti attraverso il nostro sito web. Per qualsiasi domanda relativa alla privacy, potete contattarci a {siteConfig.email}.
           </Typography>
         </Box>
 
@@ -175,7 +176,7 @@ const PrivacyPage = () => (
             variant="body2"
             sx={{ color: "#666", lineHeight: 1.9 }}
           >
-            I dati personali forniti tramite il modulo di contatto (nome, email, telefono, messaggio) vengono inviati a <strong>EmailJS</strong> (emailjs.com), un servizio di elaborazione email che funge da Responsabile del Trattamento dei Dati. EmailJS elabora i vostri dati esclusivamente per inviare la email a DJ Woolrich. I dati non vengono conservati da EmailJS oltre il tempo necessario per l'invio. Per ulteriori informazioni sulla privacy di EmailJS, consultate la loro{" "}
+            I dati personali forniti tramite il modulo di contatto (nome, email, telefono, messaggio) vengono inviati a <strong>EmailJS</strong> (emailjs.com), un servizio di elaborazione email che funge da Responsabile del Trattamento dei Dati. EmailJS elabora i vostri dati esclusivamente per inviare la email a {siteConfig.name}. I dati non vengono conservati da EmailJS oltre il tempo necessario per l'invio. Per ulteriori informazioni sulla privacy di EmailJS, consultate la loro{" "}
             <Typography
               component="a"
               href="https://www.emailjs.com/legal/privacy-policy/"
@@ -251,7 +252,7 @@ const PrivacyPage = () => (
             variant="body2"
             sx={{ color: "#666", lineHeight: 1.9, mt: 2 }}
           >
-            Per esercitare tali diritti, contattate info@djwoolrich.it.
+            Per esercitare tali diritti, contattate {siteConfig.email}.
           </Typography>
         </Box>
 
@@ -289,7 +290,7 @@ const PrivacyPage = () => (
             variant="body2"
             sx={{ color: "#666", lineHeight: 1.9 }}
           >
-            Potete ritirare il vostro consenso al trattamento dei dati personali in qualsiasi momento contattandoci a <strong>info@djwoolrich.it</strong>. Una volta ritirato il consenso, non continueremo a elaborare i vostri dati per le finalità comunicate, salvo obblighi legali.
+            Potete ritirare il vostro consenso al trattamento dei dati personali in qualsiasi momento contattandoci a <strong>{siteConfig.email}</strong>. Una volta ritirato il consenso, non continueremo a elaborare i vostri dati per le finalità comunicate, salvo obblighi legali.
           </Typography>
         </Box>
 
@@ -365,7 +366,7 @@ const PrivacyPage = () => (
           >
             <strong>Ultima modifica:</strong> {new Date().toLocaleDateString('it-IT')}
             <br />
-            Per domande sulla privacy, contattate info@djwoolrich.it
+            Per domande sulla privacy, contattate {siteConfig.email}
           </Typography>
         </Box>
       </Container>
@@ -376,4 +377,4 @@ const PrivacyPage = () => (
 
 export default PrivacyPage
 
-export const Head = () => <title>Privacy Policy — DJ Woolrich</title>
+export const Head = () => <title>{`Privacy Policy — ${siteConfig.name}`}</title>

@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import { immaginiServizi } from "../images/illustrazioni"
+import siteConfig from "../siteconfig.json"
 import {
   Box,
   Container,
@@ -42,7 +43,7 @@ const allServices = [
 // Citazione
 const citazione = {
   testo: "La musica — quella la ricorderete per sempre.",
-  autore: "DJ Woolrich",
+  autore: siteConfig.name,
 }
 
 const IndexPage = () => {
@@ -344,7 +345,7 @@ const IndexPage = () => {
                   overflow: "hidden",
                 }}
               >
-                <GatsbyImage image={profileImg} alt="DJ Woolrich" />
+                <GatsbyImage image={profileImg} alt={`${siteConfig.name}`} />
               </Box>
             )}
           </Grid>
@@ -371,7 +372,7 @@ const IndexPage = () => {
                 mb: 3,
               }}
             >
-              DJ Woolrich
+              {siteConfig.name}
             </Typography>
             <Typography
               variant="body1"
@@ -469,4 +470,4 @@ const IndexPage = () => {
 
 export default IndexPage
 
-export const Head = () => <title>DJ Woolrich — Musica per i tuoi momenti speciali</title>
+export const Head = () => <title>{`${siteConfig.name} — Musica per i tuoi momenti speciali`}</title>

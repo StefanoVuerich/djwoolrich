@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import Breadcrumb from "../components/Breadcrumb"
 import { consoleDj, mappa } from "../images/illustrazioni"
+import siteConfig from "../siteconfig.json"
 import {
   Box,
   Container,
@@ -113,7 +114,7 @@ const DjMatrimoniPage = () => {
             },
           }}
         >
-          <GatsbyImage image={heroImg} alt="DJ Woolrich - Matrimonio" />
+          <GatsbyImage image={heroImg} alt={`${siteConfig.name} - Matrimonio`} />
         </Box>
       )}
       <Box
@@ -250,7 +251,7 @@ const DjMatrimoniPage = () => {
           }}
         />
         <Typography sx={{ fontSize: "0.8rem", letterSpacing: "0.1em", color: "#999", textTransform: "uppercase" }}>
-          DJ Woolrich
+          {siteConfig.name}
         </Typography>
       </Container>
     </Box>
@@ -642,4 +643,4 @@ const DjMatrimoniPage = () => {
 
 export default DjMatrimoniPage
 
-export const Head = () => <title>DJ Matrimonio — DJ Woolrich</title>
+export const Head = () => <title>{`DJ Matrimonio — ${siteConfig.name}`}</title>

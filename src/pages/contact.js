@@ -16,6 +16,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp"
 import EmailIcon from "@mui/icons-material/Email"
 import PhoneIcon from "@mui/icons-material/Phone"
 import LocationOnIcon from "@mui/icons-material/LocationOn"
+import siteConfig from "../siteconfig.json"
 
 const ContactPage = () => {
   const data = useStaticQuery(graphql`
@@ -59,7 +60,7 @@ const ContactPage = () => {
               },
             }}
           >
-            <GatsbyImage image={heroImg} alt="DJ Woolrich - Contatti" />
+            <GatsbyImage image={heroImg} alt={`${siteConfig.name} - Contatti`} />
           </Box>
         )}
         <Box
@@ -231,7 +232,7 @@ const ContactPage = () => {
                     Preferibilmente con dettagli del vostro evento o richiesta.
                   </Typography>
                   <Link
-                    href="mailto:info@djwoolrich.it"
+                    href={`mailto:${siteConfig.email}`}
                     sx={{
                       fontSize: "0.875rem",
                       fontWeight: 600,
@@ -240,7 +241,7 @@ const ContactPage = () => {
                       "&:hover": { textDecoration: "underline" },
                     }}
                   >
-                    info@djwoolrich.it →
+                    {siteConfig.email} →
                   </Link>
                 </Box>
               </Box>
@@ -427,4 +428,4 @@ const ContactPage = () => {
 
 export default ContactPage
 
-export const Head = () => <title>Contatti — DJ Woolrich</title>
+export const Head = () => <title>{`Contatti — ${siteConfig.name}`}</title>

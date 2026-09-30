@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import Breadcrumb from "../components/Breadcrumb"
 import { immaginiServizi } from "../images/illustrazioni"
+import siteConfig from "../siteconfig.json"
 import {
   Box,
   Container,
@@ -147,7 +148,7 @@ const ServicesPage = () => {
               },
             }}
           >
-            <GatsbyImage image={heroImg} alt="DJ Woolrich - Servizi" />
+            <GatsbyImage image={heroImg} alt={`${siteConfig.name} - Servizi`} />
           </Box>
         )}
         <Box
@@ -427,7 +428,7 @@ const ServicesPage = () => {
               textAlign: "center",
             }}
           >
-            Perché Scegliere DJ Woolrich
+            Perché Scegliere {siteConfig.name}
           </Typography>
 
           <Grid container spacing={4}>

@@ -4,6 +4,7 @@ import MenuIcon from "@mui/icons-material/Menu"
 import CloseIcon from "@mui/icons-material/Close"
 import IconButton from "@mui/material/IconButton"
 import { Link as GatsbyLink } from "gatsby"
+import siteConfig from "../siteconfig.json"
 
 const menuItems = [
   { label: "Home", to: "/" },
@@ -51,7 +52,7 @@ const Navbar = () => {
               transition: "opacity 0.3s ease",
             }}
           >
-            DJ Woolrich
+            {siteConfig.name}
           </Typography>
 
           {/* Menu desktop */}

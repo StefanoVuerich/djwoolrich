@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout"
 import Breadcrumb from "../components/Breadcrumb"
+import siteConfig from "../siteconfig.json"
 import {
   Box,
   Container,
@@ -303,7 +304,7 @@ const CookiePage = () => (
             variant="body2"
             sx={{ color: "#666", lineHeight: 1.9, mt: 2 }}
           >
-            <strong>Diritto di cambiare idea:</strong> Potete modificare le vostre preferenze ai cookie in qualsiasi momento tramite le impostazioni del sito o contattandoci direttamente a info@djwoolrich.it.
+            <strong>Diritto di cambiare idea:</strong> Potete modificare le vostre preferenze ai cookie in qualsiasi momento tramite le impostazioni del sito o contattandoci direttamente a {siteConfig.email}.
           </Typography>
         </Box>
 
@@ -322,7 +323,7 @@ const CookiePage = () => (
             variant="body2"
             sx={{ color: "#666", lineHeight: 1.9 }}
           >
-            Se avete domande sull'uso dei cookie o desiderate ritirare il vostro consenso, potete contattarci a info@djwoolrich.it. Avete anche il diritto di presentare un reclamo all'autorità di protezione dei dati competente.
+            Se avete domande sull'uso dei cookie o desiderate ritirare il vostro consenso, potete contattarci a {siteConfig.email}. Avete anche il diritto di presentare un reclamo all'autorità di protezione dei dati competente.
           </Typography>
         </Box>
 
@@ -396,7 +397,7 @@ const CookiePage = () => (
           >
             <strong>Ultima modifica:</strong> {new Date().toLocaleDateString('it-IT')}
             <br />
-            Per domande sui cookie, contattate info@djwoolrich.it
+            Per domande sui cookie, contattate {siteConfig.email}
           </Typography>
         </Box>
       </Container>
@@ -407,4 +408,4 @@ const CookiePage = () => (
 
 export default CookiePage
 
-export const Head = () => <title>Cookie Policy — DJ Woolrich</title>
+export const Head = () => <title>{`Cookie Policy — ${siteConfig.name}`}</title>

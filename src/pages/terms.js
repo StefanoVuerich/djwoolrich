@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout"
 import Breadcrumb from "../components/Breadcrumb"
+import siteConfig from "../siteconfig.json"
 import {
   Box,
   Container,
@@ -69,7 +70,7 @@ const TermsPage = () => (
           }}
         >
           Questi Termini e Condizioni ("Termini") regolano l'utilizzo del sito web
-          www.djwoolrich.it e dei servizi offerti da DJ Woolrich. Accedendo e
+          {siteConfig.domain} e dei servizi offerti da {siteConfig.name}. Accedendo e
           utilizzando il sito, accetti di essere vincolato da questi Termini. Se
           non accetti alcuna parte di questi Termini, ti preghiamo di non utilizzare
           il sito.
@@ -96,7 +97,7 @@ const TermsPage = () => (
             mb: 4,
           }}
         >
-          DJ Woolrich offre i seguenti servizi:
+          {siteConfig.name} offre i seguenti servizi:
         </Typography>
         <Box
           component="ul"
@@ -136,7 +137,7 @@ const TermsPage = () => (
         >
           Tutti i preventivi forniti tramite il sito sono indicativi e non vincolanti.
           Una prenotazione diventa effettiva solo dopo la conferma scritta da parte
-          di DJ Woolrich e il versamento di un deposito cauzionale (se richiesto).
+          di {siteConfig.name} e il versamento di un deposito cauzionale (se richiesto).
           Ogni evento è valutato individualmente in base ai dettagli specifici
           forniti dal cliente.
         </Typography>
@@ -192,7 +193,7 @@ const TermsPage = () => (
           Tutto il contenuto del sito, inclusi testi, immagini, grafica e musica,
           è protetto da leggi sul diritto d'autore. Le canzoni composte
           specificatamente per il cliente rimangono di proprietà del cliente, ma
-          DJ Woolrich mantiene i diritti d'autore della composizione musicale.
+          {siteConfig.name} mantiene i diritti d'autore della composizione musicale.
         </Typography>
 
         {/* Sezione 6 */}
@@ -216,9 +217,9 @@ const TermsPage = () => (
             mb: 4,
           }}
         >
-          DJ Woolrich non è responsabile per danni indiretti, incidentali o
+          {siteConfig.name} non è responsabile per danni indiretti, incidentali o
           conseguenti derivanti dall'uso del sito o dei servizi. La responsabilità
-          totale di DJ Woolrich non supera l'importo pagato per i servizi forniti.
+          totale di {siteConfig.name} non supera l'importo pagato per i servizi forniti.
         </Typography>
 
         {/* Sezione 7 */}
@@ -318,7 +319,7 @@ const TermsPage = () => (
             mb: 4,
           }}
         >
-          DJ Woolrich si riserva il diritto di modificare questi Termini in qualsiasi
+          {siteConfig.name} si riserva il diritto di modificare questi Termini in qualsiasi
           momento. Le modifiche entreranno in vigore al momento della pubblicazione
           sul sito. L'uso continuato del sito dopo le modifiche costituisce
           accettazione dei nuovi Termini.
@@ -389,7 +390,7 @@ const TermsPage = () => (
           </Typography>
           <Typography
             component="a"
-            href="mailto:info@djwoolrich.it"
+            href={`mailto:${siteConfig.email}`}
             sx={{
               color: "#1a1a1a",
               textDecoration: "none",
@@ -398,7 +399,7 @@ const TermsPage = () => (
               "&:hover": { textDecoration: "underline" },
             }}
           >
-            info@djwoolrich.it
+            {siteConfig.email}
           </Typography>
           <Typography sx={{ color: "#1a1a1a", fontWeight: 600, mb: 1 }}>
             WhatsApp:
@@ -438,4 +439,4 @@ const TermsPage = () => (
 
 export default TermsPage
 
-export const Head = () => <title>Termini e Condizioni — DJ Woolrich</title>
+export const Head = () => <title>{`Termini e Condizioni — ${siteConfig.name}`}</title>

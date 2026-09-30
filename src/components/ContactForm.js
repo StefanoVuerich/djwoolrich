@@ -15,6 +15,7 @@ import {
 } from "@mui/material"
 import CheckCircleIcon from "@mui/icons-material/CheckCircle"
 import ErrorIcon from "@mui/icons-material/Error"
+import siteConfig from "../siteconfig.json"
 
 const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
@@ -67,7 +68,7 @@ const ContactForm = () => {
           data: data.data || "Non specificata",
           messaggio: data.messaggio,
           accept_terms: data.acceptTerms ? "Sì" : "No",
-          to_email: "info@djwoolrich.it",
+          to_email: siteConfig.email,
         }
       )
 

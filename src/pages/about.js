@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
 import Breadcrumb from "../components/Breadcrumb"
 import { onde } from "../images/illustrazioni"
+import siteConfig from "../siteconfig.json"
 import {
   Box,
   Container,
@@ -61,7 +62,7 @@ const IndexPage = () => {
             },
           }}
         >
-          <GatsbyImage image={heroImg} alt="DJ Woolrich - Chi Siamo" />
+          <GatsbyImage image={heroImg} alt={`${siteConfig.name} - Chi Siamo`} />
         </Box>
       )}
       <Box
@@ -101,7 +102,7 @@ const IndexPage = () => {
                 mb: 3,
               }}
             >
-              DJ Woolrich
+              {siteConfig.name}
             </Typography>
             <Typography
               variant="body1"
@@ -185,7 +186,7 @@ const IndexPage = () => {
                   overflow: "hidden",
                 }}
               >
-                <GatsbyImage image={profileImg} alt="DJ Woolrich - Foto Profilo" />
+                <GatsbyImage image={profileImg} alt={`${siteConfig.name} - Foto Profilo`} />
               </Box>
             )}
           </Grid>
@@ -220,7 +221,7 @@ const IndexPage = () => {
               variant="body1"
               sx={{ color: "#666", lineHeight: 1.9, mb: 2 }}
             >
-              Sono DJ Woolrich, un artista che scrive, compone e produce musica
+              Sono {siteConfig.name}, un artista che scrive, compone e produce musica
               originale. Da anni lavoro nel mondo della musica matrimoniale nel
               Nord-Est Italia, portando la mia visione personale di cosa significhi
               dirigere la colonna sonora del giorno più importante della vostra vita.
@@ -455,7 +456,7 @@ const IndexPage = () => {
           }}
         />
         <Typography sx={{ fontSize: "0.8rem", letterSpacing: "0.1em", color: "rgba(255,255,255,0.6)", textTransform: "uppercase" }}>
-          DJ Woolrich
+          {siteConfig.name}
         </Typography>
       </Container>
     </Box>
@@ -516,4 +517,4 @@ const IndexPage = () => {
 
 export default IndexPage
 
-export const Head = () => <title>Chi sono — DJ Woolrich</title>
+export const Head = () => <title>{`Chi sono — ${siteConfig.name}`}</title>
