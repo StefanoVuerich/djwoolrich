@@ -6,6 +6,8 @@ require("dotenv").config({
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  pathPrefix: "/djwoolrich",
+  jsxRuntime: "automatic",
   siteMetadata: {
     siteUrl: `https://www.yourdomain.tld`,
   },
