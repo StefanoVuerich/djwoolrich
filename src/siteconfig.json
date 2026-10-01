@@ -2,7 +2,7 @@
   "name": "Live'n'Mix",
   "domain": "www.livenmix.it",
   "siteUrl": "https://www.livenmix.it",
-  "pathPrefix": "/livenmix",
+  "pathPrefix": "",
   "email": "info@livenmix.it",
   "telefono": "+393272134911",
   "telefonoVisualizzato": "+39 3272134911",
