@@ -12,6 +12,7 @@ const menuItems = [
   { label: "Chi Siamo", to: "/about" },
   { label: "DJ Matrimoni", to: "/dj-matrimoni" },
   { label: "Servizi", to: "/services" },
+  { label: "Playlist", to: "/playlist" },
   { label: "Contatti", to: "/contact" },
 ]
 

@@ -12,6 +12,7 @@ const navLinks = [
   { label: "Chi Siamo", href: "/about/" },
   { label: "DJ Matrimoni", href: "/dj-matrimoni/" },
   { label: "Servizi", href: "/services/" },
+  { label: "Playlist", href: "/playlist/" },
   { label: "Contatti", href: "/contact/" },
 ]
 

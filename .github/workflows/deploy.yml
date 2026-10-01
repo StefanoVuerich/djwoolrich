@@ -3,6 +3,9 @@ name: Deploy Gatsby su GitHub Pages
 on:
   push:
     branches: [main]
+  # Ricostruzione giornaliera per aggiornare le classifiche Deezer
+  schedule:
+    - cron: "0 5 * * *"
   workflow_dispatch:
 
 permissions:

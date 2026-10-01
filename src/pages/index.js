@@ -11,6 +11,7 @@ import {
   Button,
   Grid,
 } from "@mui/material"
+import PlaylistSection from "../components/PlaylistSection"
 import Seo, { localBusinessSchema, breadcrumbSchema } from "../components/Seo"
 
 // Tutti i servizi
@@ -421,6 +422,9 @@ const IndexPage = () => {
         </Grid>
       </Container>
     </Box>
+
+    {/* ── PLAYLIST ──────────────────────────────────── */}
+    <PlaylistSection limite={4} mostraTutte sfondo="#f5f5f5" />
 
     {/* ── CTA FINALE ────────────────────────────────── */}
     <Box
