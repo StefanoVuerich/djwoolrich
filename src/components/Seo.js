@@ -5,7 +5,9 @@ import siteConfig from "../siteconfig.json"
 const baseUrl = `${siteConfig.siteUrl}${siteConfig.pathPrefix}`
 
 // URL dei profili social effettivamente configurati
-const socialUrls = Object.values(siteConfig.social).filter(Boolean)
+const socialUrls = Object.values(siteConfig.social).filter(
+  url => url && url.startsWith("http")
+)
 
 // Schema LocalBusiness riutilizzabile in più pagine
 export const localBusinessSchema = {

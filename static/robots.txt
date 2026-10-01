@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://stefanovuerich.github.io/djwoolrich/sitemap-index.xml
+Sitemap: https://www.livenmix.it/livenmix/sitemap-index.xml
