@@ -2,7 +2,7 @@
   "name": "Live'n'Mix",
   "domain": "www.djwoolrich.it",
   "siteUrl": "https://stefanovuerich.github.io",
-  "pathPrefix": "/djwoolrich",
+  "pathPrefix": "/livenmix",
   "email": "info@djwoolrich.it",
   "telefono": "+393298883327",
   "telefonoVisualizzato": "+39 329 888 3327",
@@ -11,8 +11,8 @@
   "immagineOg": "/og-image.jpg",
   "zonaServita": ["Pordenone", "Friuli Venezia Giulia", "Veneto"],
   "social": {
-    "instagram": "",
-    "facebook": "",
-    "youtube": ""
+    "instagram": "#",
+    "facebook": "#",
+    "youtube": "#"
   }
 }
