@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.livenmix.it/livenmix/sitemap-index.xml
+Sitemap: https://www.livenmix.it/sitemap-index.xml
