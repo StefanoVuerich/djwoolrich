@@ -9,6 +9,9 @@ import {
 } from "@mui/material"
 import Seo from "../components/Seo"
 
+// Data fissa di ultimo aggiornamento (da modificare solo quando cambia il testo)
+const ULTIMA_MODIFICA = "01/10/2026"
+
 const CookiePage = () => (
   <Layout>
 
@@ -131,7 +134,7 @@ const CookiePage = () => (
               variant="body2"
               sx={{ color: "#666", lineHeight: 1.9 }}
             >
-              <strong>Necessità:</strong> Ci aiutano a capire come utilizzate il nostro sito, quali pagine visitate e quali azioni compite. Questi cookie raccolgono dati in forma anonima.<br />
+              <strong>Necessità:</strong> Ci aiutano a capire come utilizzate il nostro sito, quali pagine visitate e quali azioni compite. Questi cookie raccolgono dati di navigazione in forma aggregata.<br />
               <strong>Durata:</strong> 13 mesi<br />
               <strong>Consenso:</strong> Richiedono il vostro consenso esplicito prima di essere installati<br />
               <strong>Nota:</strong> Questo cookie verrà bloccato fino a quando non darete il vostro consenso tramite il banner cookie.
@@ -200,7 +203,7 @@ const CookiePage = () => (
               mb: 2,
             }}
           >
-            3bis. EmailJS e Modulo di Contatto
+            4. EmailJS e Modulo di Contatto
           </Typography>
           <Typography
             variant="body2"
@@ -232,7 +235,7 @@ const CookiePage = () => (
               mb: 2,
             }}
           >
-            4. Come Gestire i Cookie
+            5. Come Gestire i Cookie
           </Typography>
           <Typography
             variant="body2"
@@ -263,7 +266,7 @@ const CookiePage = () => (
               mb: 2,
             }}
           >
-            5. Cookie di Terze Parti
+            6. Cookie di Terze Parti
           </Typography>
           <Typography
             variant="body2"
@@ -282,7 +285,7 @@ const CookiePage = () => (
               mb: 2,
             }}
           >
-            6. Banner di Consenso e Consenso Granulare
+            7. Banner di Consenso e Consenso Granulare
           </Typography>
           <Typography
             variant="body2"
@@ -318,7 +321,7 @@ const CookiePage = () => (
               mb: 2,
             }}
           >
-            7. Contatti e Diritti
+            8. Contatti e Diritti
           </Typography>
           <Typography
             variant="body2"
@@ -337,7 +340,7 @@ const CookiePage = () => (
               mb: 2,
             }}
           >
-            8. Conformità Normativa e Autorità Competente
+            9. Conformità Normativa e Autorità Competente
           </Typography>
           <Typography
             variant="body2"
@@ -381,7 +384,7 @@ const CookiePage = () => (
               mb: 2,
             }}
           >
-            9. Modifiche a Questa Policy
+            10. Modifiche a Questa Policy
           </Typography>
           <Typography
             variant="body2"
@@ -396,7 +399,7 @@ const CookiePage = () => (
             variant="body2"
             sx={{ color: "#666", lineHeight: 1.9 }}
           >
-            <strong>Ultima modifica:</strong> {new Date().toLocaleDateString('it-IT')}
+            <strong>Ultima modifica:</strong> {ULTIMA_MODIFICA}
             <br />
             Per domande sui cookie, contattate {siteConfig.email}
           </Typography>

@@ -9,6 +9,9 @@ import {
 } from "@mui/material"
 import Seo from "../components/Seo"
 
+// Data fissa di ultimo aggiornamento (da modificare solo quando cambia il testo)
+const ULTIMA_MODIFICA = "01/10/2026"
+
 const PrivacyPage = () => (
   <Layout>
 
@@ -322,7 +325,7 @@ const PrivacyPage = () => (
               Garante per la Protezione dei Dati Personali (Italia)
             </Typography>
             <Typography variant="body2" sx={{ color: "#666", lineHeight: 1.9 }}>
-              Via Buonarroti 27 - 00185 Roma<br />
+              Piazza Venezia 11 - 00187 Roma<br />
               <Typography
                 component="a"
                 href="https://www.garanteprivacy.it"
@@ -365,7 +368,7 @@ const PrivacyPage = () => (
             variant="body2"
             sx={{ color: "#666", lineHeight: 1.9 }}
           >
-            <strong>Ultima modifica:</strong> {new Date().toLocaleDateString('it-IT')}
+            <strong>Ultima modifica:</strong> {ULTIMA_MODIFICA}
             <br />
             Per domande sulla privacy, contattate {siteConfig.email}
           </Typography>

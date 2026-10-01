@@ -10,6 +10,9 @@ import {
 } from "@mui/material"
 import Seo from "../components/Seo"
 
+// Data fissa di ultimo aggiornamento (da modificare solo quando cambia il testo)
+const ULTIMA_MODIFICA = "01/10/2026"
+
 const TermsPage = () => (
   <Layout>
 
@@ -72,7 +75,7 @@ const TermsPage = () => (
           }}
         >
           Questi Termini e Condizioni ("Termini") regolano l'utilizzo del sito web
-          {siteConfig.domain} e dei servizi offerti da {siteConfig.name}. Accedendo e
+          {" "}{siteConfig.domain} e dei servizi offerti da {siteConfig.name}. Accedendo e
           utilizzando il sito, accetti di essere vincolato da questi Termini. Se
           non accetti alcuna parte di questi Termini, ti preghiamo di non utilizzare
           il sito.
@@ -194,7 +197,7 @@ const TermsPage = () => (
         >
           Tutto il contenuto del sito, inclusi testi, immagini, grafica e musica,
           è protetto da leggi sul diritto d'autore. Le canzoni composte
-          specificatamente per il cliente rimangono di proprietà del cliente, ma
+          specificatamente per il cliente rimangono di proprietà del cliente, ma{" "}
           {siteConfig.name} mantiene i diritti d'autore della composizione musicale.
         </Typography>
 
@@ -249,7 +252,6 @@ const TermsPage = () => (
           esclusivamente per rispondere alle tue richieste e fornire i servizi
           richiesti. Consulta la nostra{" "}
           <Typography
-            component="a"
             component={GatsbyLink}
             to="/privacy/"
             sx={{
@@ -288,7 +290,6 @@ const TermsPage = () => (
           un servizio esterno di elaborazione email. I dati del modulo saranno inviati a EmailJS
           per elaborare l'invio della email. Consulta la{" "}
           <Typography
-            component="a"
             component={GatsbyLink}
             to="/privacy/"
             sx={{
@@ -354,7 +355,7 @@ const TermsPage = () => (
           Codice Civile, dal Codice del Consumo (D.Lgs. 206/2005) e dalle normative sulla
           protezione dei dati personali (GDPR e D.Lgs. 196/2003). Qualsiasi controversia relativa
           a questi Termini sarà sottoposta alla competenza esclusiva dei tribunali competenti
-          territorialmente in Italia. Se siete consumatori residenti nell'UE, le vostre diritti di
+          territorialmente in Italia. Se siete consumatori residenti nell'UE, i vostri diritti di
           consumatore previsti dalla legge sono comunque garantiti.
         </Typography>
 
@@ -433,7 +434,7 @@ const TermsPage = () => (
             mt: 8,
           }}
         >
-          Ultimo aggiornamento: {new Date().toLocaleDateString("it-IT")}
+          Ultimo aggiornamento: {ULTIMA_MODIFICA}
         </Typography>
       </Container>
     </Box>
